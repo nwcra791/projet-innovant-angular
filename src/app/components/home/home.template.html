@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>
+    body {
+      height: 100vh !important;
+    }
+  </style>
+</head>
+<body style="min-height: calc(100vh - 20px) !important">
+  <div class="ui page grid" style="min-height: calc(100vh - 20px);">
+    <div class="column">
+      <div class="one column row">
+        <menu [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu>
+      </div>
+      <div class="one column row">
+        <div class="ui grid middle aligned center aligned" style="min-height: calc(100vh - 80px)">
+          <div class="one column row" style="min-height: 100%;">
+            <div class="column">
+              <h1 class="ui teal header">HOMEPAGE</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

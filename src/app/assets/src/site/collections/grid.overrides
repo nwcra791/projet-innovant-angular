@@ -1,0 +1,7 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+html, body, .ng-scope {
+  height: 100% !important;
+}

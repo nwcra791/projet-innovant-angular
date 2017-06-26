@@ -1,0 +1,14 @@
+<div *ngIf="logging">
+  <div class="ui three item menu">
+    <a class="active item">Editorials</a>
+    <a class="item">Reviews</a>
+    <a class="item">Upcoming Events</a>
+  </div>
+</div>
+
+<div *ngIf="!logging">
+  <div class="ui two item menu">
+    <a class="item" routerLink="/home">Home</a>
+    <a class="item" routerLink="/login-register">Register or Log In</a>
+  </div>
+</div>
