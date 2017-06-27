@@ -13,11 +13,15 @@ var router_1 = require("@angular/router");
 var menu_component_1 = require("./components/menu/menu.component");
 var login_register_component_1 = require("./components/login-register/login-register.component");
 var home_component_1 = require("./components/home/home.component");
+var annonce_component_1 = require("./components/annonce/annonce.component");
+var card_component_1 = require("./components/card/card.component");
 var logging_service_1 = require("./services/logging.service");
 var http_service_1 = require("./services/http.service");
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
+    { path: 'annonce', component: annonce_component_1.AnnonceComponent },
+    { path: 'card', component: card_component_1.CardComponent },
     { path: 'login-register', component: login_register_component_1.LoginRegisterComponent },
 ];
 var AppModule = (function () {
@@ -37,7 +41,9 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
             login_register_component_1.LoginRegisterComponent,
-            menu_component_1.MenuComponent
+            menu_component_1.MenuComponent,
+            annonce_component_1.AnnonceComponent,
+            card_component_1.CardComponent
         ],
         bootstrap: [
             app_component_1.AppComponent

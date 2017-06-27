@@ -8,14 +8,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { AnnonceComponent} from './components/annonce/annonce.component';
+import { CardComponent } from './components/card/card.component';
 
 import { LoggingService } from './services/logging.service';
 import { HttpService } from './services/http.service';
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'annonce', component: AnnonceComponent},
+  {path: 'card', component: CardComponent},
   {path: 'login-register', component: LoginRegisterComponent},
 ];
 
@@ -30,8 +34,9 @@ const routes: Routes = [
                   AppComponent,
                   HomeComponent,
                   LoginRegisterComponent,
-                  MenuComponent
-
+                  MenuComponent,
+                  AnnonceComponent,
+                  CardComponent
                 ],
   bootstrap:    [
                   AppComponent

@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var logging_service_1 = require("../../services/logging.service");
 var http_service_1 = require("../../services/http.service");
-var HomeComponent = (function () {
-    function HomeComponent(loggingService, httpService) {
+var AnnonceComponent = (function () {
+    function AnnonceComponent(loggingService, httpService) {
         this.loggingService = loggingService;
         this.httpService = httpService;
         this.payload = {
@@ -24,18 +24,18 @@ var HomeComponent = (function () {
             console.log(data);
         });
     }
-    return HomeComponent;
+    return AnnonceComponent;
 }());
-HomeComponent = __decorate([
+AnnonceComponent = __decorate([
     core_1.Component({
-        selector: 'home',
-        templateUrl: './home.template.html',
+        selector: 'annonce',
+        templateUrl: './annonce.template.html',
         styleUrls: [
             "../../../assets/dist/semantic.min.css"
         ],
     }),
     __metadata("design:paramtypes", [logging_service_1.LoggingService,
         http_service_1.HttpService])
-], HomeComponent);
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+], AnnonceComponent);
+exports.AnnonceComponent = AnnonceComponent;
+//# sourceMappingURL=annonce.component.js.map
