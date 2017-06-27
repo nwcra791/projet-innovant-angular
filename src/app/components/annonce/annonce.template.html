@@ -1,0 +1,45 @@
+<div class="ui page grid">
+  <div class="column">
+    <div class="one column row">
+      <menu [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu>
+    </div>
+    <div class="one column row">
+      <div class="column">
+        <div class="ui grid">
+          <div class="one column row">
+            <div class="column">
+              <div class="ui form">
+                <div class="field">
+                  <label>Titre</label>
+                  <input type="text" placeholder="Titre">
+                </div>
+                <div class="field">
+                  <label>Aide attendu</label>
+                  <textarea rows="2" placeholder="Défricher mon jardin"></textarea>
+                </div>
+                <div class="field">
+                  <label>Description</label>
+                  <textarea placeholder="Description"></textarea>
+                </div>
+                <div class="inline fields">
+                  <div class="two wide field">
+                    <label>Date de début</label>
+                  </div>
+                  <div class="six wide field">
+                    <input type="date" placeholder="Date de début">
+                  </div>
+                  <div class="two wide field">
+                    <label>Nombre de nuit</label>
+                  </div>
+                  <div class="six wide field">
+                    <input type="text" placeholder="Nombre de nuit">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

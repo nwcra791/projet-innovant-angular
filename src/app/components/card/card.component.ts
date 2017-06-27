@@ -4,19 +4,20 @@ import { HttpService } from '../../services/http.service';
 
 
 @Component({
-  selector: 'home',
-  templateUrl: './home.template.html',
+  selector: 'card',
+  templateUrl: './card.template.html',
   styleUrls: [
     "../../../assets/dist/semantic.min.css"
   ],
 })
 
-export class HomeComponent {
+export class CardComponent {
   constructor(
     private loggingService: LoggingService,
     private httpService: HttpService
   ) {
     httpService.post("/connection", JSON.stringify(this.payload)).subscribe(data => {
+
      console.log(data);
     });
   }
@@ -29,6 +30,6 @@ export class HomeComponent {
   loggingStatut: boolean = this.loggingService.isLogin();
 
   changedLogging: boolean;
-    title: "Accueil";
+    title: "Card";
 
 }
