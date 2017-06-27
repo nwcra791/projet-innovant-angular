@@ -19,12 +19,12 @@ var HttpService = (function () {
     }
     HttpService.prototype.get = function (param) {
         var options = new http_1.RequestOptions({ headers: this.headers });
-        return this.http.get("http://172.16.15.130:8080" + param, options)
+        return this.http.get("http://192.168.43.95:8080" + param, options)
             .map(function (res) { return res.json(); });
     };
     HttpService.prototype.post = function (param, data) {
         var options = new http_1.RequestOptions({ headers: this.headers });
-        return this.http.post("http://172.16.15.130:8080" + param, data, options)
+        return this.http.post("http://192.168.43.95:8080" + param, data, options)
             .map(function (res) { return res.json(); });
     };
     return HttpService;

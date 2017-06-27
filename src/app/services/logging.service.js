@@ -12,6 +12,8 @@ var core_1 = require("@angular/core");
 var LoggingService = (function () {
     function LoggingService() {
         this.loginState = false;
+        this.connInfos = {};
+        this.secret = "";
     }
     LoggingService.prototype.login = function () {
         this.loginState = true;

@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
 
+
+
 @Injectable()
 export class LoggingService {
 
   constructor() { }
 
   private loginState: boolean = false;
+  private connInfos: Object = {
+
+  };
+
+  private secret: string = "";
 
   public login(): void {
     this.loginState = true;
