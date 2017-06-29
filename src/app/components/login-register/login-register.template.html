@@ -1,23 +1,54 @@
-  <head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
-    <style>
-      body {
-        height: 100vh !important;
-      }
-    </style>
-  </head>
-  <body style="min-height: calc(100vh - 20px) !important">
-    <div class="ui page grid" style="min-height: calc(100vh - 20px);">
+
+    <div class="ui page grid">
       <div class="column">
       <div class="one column row">
           <menu [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu>
         </div>
         <div class="one column row">
-      <div class="ui grid middle aligned center aligned" style="min-height: calc(100vh - 80px)">
+      <div class="ui grid middle">
         <div class="one column row" style="min-height: 100%;">
           <div class="column">
-            <h1 class="ui orange header">LOGIN / REGISTER</h1>
+            <h1 class="ui orange header">LOGIN</h1>
+            <form class="ui form">
+              <div class="field">
+                <label>First Name</label>
+                <input [(ngModel)]="loginForm.firstname" type="text" name="first-name" placeholder="First Name">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input [(ngModel)]="loginForm.lastname" type="text" name="last-name" placeholder="Last Name">
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" tabindex="0" class="hidden">
+                  <label>I agree to the Terms and Conditions</label>
+                </div>
+              </div>
+              <button (click)="login()" class="ui button" type="submit">Submit</button>
+            </form>
+
+            <h1 class="ui blue header">REGISTER</h1>
+            <form class="ui form">
+              <div class="field">
+                <label>First Name</label>
+                <input [(ngModel)]="registerForm.firstname" type="text" name="first-name" placeholder="First Name">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input [(ngModel)]="registerForm.lastname" type="text" name="last-name" placeholder="Last Name">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input [(ngModel)]="registerForm.email" type="text" name="e-mail" placeholder="Email">
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" tabindex="0" class="hidden">
+                  <label>I agree to the Terms and Conditions</label>
+                </div>
+              </div>
+              <button (click)="register()" class="ui button" type="submit">Submit</button>
+            </form>
           </div>
         </div>
       </div>
@@ -25,4 +56,3 @@
     </div>
 
     </div>
-  </body>

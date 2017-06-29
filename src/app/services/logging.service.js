@@ -15,6 +15,18 @@ var LoggingService = (function () {
         this.connInfos = {};
         this.secret = "";
     }
+    LoggingService.prototype.setConnInfos = function (connInfos) {
+        this.connInfos = connInfos;
+    };
+    LoggingService.prototype.getConnInfos = function () {
+        return this.connInfos;
+    };
+    LoggingService.prototype.setSecret = function (secret) {
+        this.secret = secret;
+    };
+    LoggingService.prototype.getSecret = function () {
+        return this.secret;
+    };
     LoggingService.prototype.login = function () {
         this.loginState = true;
     };

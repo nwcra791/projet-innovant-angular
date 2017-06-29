@@ -14,6 +14,22 @@ export class LoggingService {
 
   private secret: string = "";
 
+  public setConnInfos(connInfos: Object): void {
+    this.connInfos = connInfos;
+  }
+
+  public getConnInfos(): Object {
+    return this.connInfos;
+  }
+
+  public setSecret(secret: string): void {
+    this.secret = secret;
+  }
+
+  public getSecret(): string {
+    return this.secret;
+  }
+
   public login(): void {
     this.loginState = true;
   }

@@ -17,16 +17,21 @@ export class HomeComponent {
     private httpService: HttpService
   ) {
     httpService.post("/connection", JSON.stringify(this.payload)).subscribe(data => {
-     console.log(data);
+      loggingService.setSecret(data["session-id"]);
+      loggingService.setConnInfos(data.response);
+      loggingService.login();
+
+      //this.loggingStatut = this.loggingService.isLogin();
     });
   }
+
   payload = {
     email: "quentin@mail.com",
     password: "test123"
   };
 
 
-  loggingStatut: boolean = this.loggingService.isLogin();
+
 
   changedLogging: boolean;
     title: "Accueil";

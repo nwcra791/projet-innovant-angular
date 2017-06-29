@@ -19,9 +19,11 @@ var HomeComponent = (function () {
             email: "quentin@mail.com",
             password: "test123"
         };
-        this.loggingStatut = this.loggingService.isLogin();
         httpService.post("/connection", JSON.stringify(this.payload)).subscribe(function (data) {
-            console.log(data);
+            loggingService.setSecret(data["session-id"]);
+            loggingService.setConnInfos(data.response);
+            loggingService.login();
+            //this.loggingStatut = this.loggingService.isLogin();
         });
     }
     return HomeComponent;

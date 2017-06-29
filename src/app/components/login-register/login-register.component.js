@@ -9,7 +9,21 @@ var core_1 = require("@angular/core");
 var LoginRegisterComponent = (function () {
     function LoginRegisterComponent() {
         this.name = 'Login Register';
+        this.loginForm = {
+            firstname: "",
+            lastname: "",
+        };
+        this.registerForm = {
+            firstname: "",
+            lastname: "",
+            email: ""
+        };
     }
+    LoginRegisterComponent.prototype.login = function () {
+        console.log(this.loginForm.firstname);
+    };
+    LoginRegisterComponent.prototype.register = function () {
+    };
     return LoginRegisterComponent;
 }());
 LoginRegisterComponent = __decorate([

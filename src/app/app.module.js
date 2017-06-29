@@ -17,6 +17,7 @@ var annonce_component_1 = require("./components/annonce/annonce.component");
 var card_component_1 = require("./components/card/card.component");
 var logging_service_1 = require("./services/logging.service");
 var http_service_1 = require("./services/http.service");
+var forms_1 = require("@angular/forms");
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: home_component_1.HomeComponent },
@@ -35,7 +36,8 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(routes),
             platform_browser_1.BrowserModule,
             router_1.RouterModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            forms_1.FormsModule
         ],
         declarations: [
             app_component_1.AppComponent,

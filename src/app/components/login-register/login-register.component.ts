@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
     "../../../assets/dist/semantic.min.css"
   ],
 })
-export class LoginRegisterComponent  { name = 'Login Register'; }
+export class LoginRegisterComponent  {
+  name = 'Login Register';
+  loginForm = {
+    firstname: "",
+    lastname: "",
+  }
+
+  registerForm = {
+    firstname: "",
+    lastname: "",
+    email: ""
+  }
+
+  login(): void {
+    console.log(this.loginForm.firstname);
+  }
+
+  register(): void {
+
+  }
+}

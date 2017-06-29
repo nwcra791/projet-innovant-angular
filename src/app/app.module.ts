@@ -14,6 +14,8 @@ import { CardComponent } from './components/card/card.component';
 import { LoggingService } from './services/logging.service';
 import { HttpService } from './services/http.service';
 
+import { FormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -28,7 +30,8 @@ const routes: Routes = [
                   RouterModule.forRoot(routes),
                   BrowserModule,
                   RouterModule,
-                  HttpModule
+                  HttpModule,
+                  FormsModule
                 ],
   declarations: [
                   AppComponent,
