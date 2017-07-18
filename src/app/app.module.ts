@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { HomeComponent } from './components/home/home.component';
 import { AnnonceComponent} from './components/annonce/annonce.component';
@@ -13,6 +14,8 @@ import { CardComponent } from './components/card/card.component';
 
 import { LoggingService } from './services/logging.service';
 import { HttpService } from './services/http.service';
+import { NgSemanticModule } from 'ng-semantic';
+
 
 import { FormsModule } from '@angular/forms';
 
@@ -31,13 +34,15 @@ const routes: Routes = [
                   BrowserModule,
                   RouterModule,
                   HttpModule,
-                  FormsModule
+                  FormsModule,
+                  NgSemanticModule
                 ],
   declarations: [
                   AppComponent,
                   HomeComponent,
                   LoginRegisterComponent,
                   MenuComponent,
+                  MenuMobileComponent,
                   AnnonceComponent,
                   CardComponent
                 ],

@@ -1,14 +1,66 @@
 <div *ngIf="logging">
-  <div class="ui three item menu">
-    <a class="active item">Editorials</a>
-    <a class="item">Reviews</a>
-    <a class="item">Upcoming Events</a>
+  <div class="ui large secondary inverted pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <a class="active item">Home</a>
+    <a class="item">Work</a>
+    <a class="item">Company</a>
+    <a class="item">Careers</a>
+    <div class="right item">
+      <a class="ui inverted green button">Profile</a>
+    </div>
   </div>
 </div>
 {{ logging }}
 <div *ngIf="!logging">
-  <div class="ui two item menu">
-    <a class="item" routerLink="/home">Home</a>
+  <!--<div class="ui large secondary inverted pointing menu">
+    <a class="item">Home</a>
     <a class="item" routerLink="/login-register">Register or Log In</a>
+  </div>-->
+  <div class="ui large secondary inverted pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <a class="active item" routerLink="/home">Home</a>
+    <a class="item" routerLink="/annonce">Parcourir les annonces</a>
+    <a class="item" routerLink="/be-visible">Espace Hôte</a>
+
+
+    <div class="right item">
+      <a class="ui inverted button" style="margin-right: 2px;">Log in</a>
+      <a class="ui inverted button" style="margin-left: 2px;">Sign Up</a>
+      <a class="item" style="position: absolute; top: 50px; right: 0px;">À propos de nous</a>
+    </div>
   </div>
 </div>
+<!--
+<script src="https://semantic-ui.com/examples/assets/library/jquery.min.js">
+
+</script>
+<script>
+    $(document)
+        .ready(function() {
+
+            // fix menu when passed
+            $('.masthead')
+                .visibility({
+                    once: false,
+                    onBottomPassed: function() {
+                        $('.fixed.menu').transition('fade in');
+                    },
+                    onBottomPassedReverse: function() {
+                        $('.fixed.menu').transition('fade out');
+                    }
+                })
+            ;
+
+            // create sidebar and attach to menu open
+            $('.ui.sidebar')
+                .sidebar('attach events', '.toc.item')
+            ;
+
+        })
+    ;
+</script>
+-->

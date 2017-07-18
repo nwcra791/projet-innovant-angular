@@ -1,9 +1,52 @@
+  <style>
+    .pusher
+    {
+      padding-top:0px !important;
+    }
+    .masthead
+    {
+      border-radius: 0px !important;
+      min-height: 30vh;
 
+      -moz-box-shadow: 0px 10px 80px -30px #656565 !important;
+      -webkit-box-shadow: 0px 10px 80px -30px #656565 !important;
+      -o-box-shadow: 0px 10px 80px -30px #656565 !important;
+      box-shadow: 0px 10px 80px -30px #656565 !important;
+      filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=50) !important;
+    }
 
-  <div class="ui page grid" style="min-height: calc(100vh - 20px);">
+    .masthead .ui.grid
+    {
+      min-height: 25vh !important;
+    }
+  </style>
+
+  <div class="pusher">
+    <div class="ui masthead inverted segment">
+      <div class="ui grid">
+        <div class="row center aligned top aligned computer only">
+          <div class="column">
+            <menu [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu>
+          </div>
+        </div>
+
+        <div class="row center aligned top aligned tablet mobile only">
+          <div class="column">
+            <menu-mobile [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu-mobile>
+          </div>
+        </div>
+
+        <div class="row center aligned middle aligned">
+          <div class="column">
+            <h1 class="ui inverted teal header">TEST PAGE</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="ui container grid" style="min-height: calc(100vh - 20px);">
     <div class="column">
       <div class="one column row">
-        <menu [logging]="loggingStatut" (changedLogging)="loggingStatut = $event"></menu>
+
       </div>
       <div class="one column row">
         <div class="ui grid">
@@ -15,4 +58,5 @@
         </div>
       </div>
     </div>
+  </div>
   </div>

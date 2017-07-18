@@ -1,15 +1,14 @@
-import { browser, element, by } from 'protractor';
+import { FreshInnoPage } from './app.po';
 
-describe('QuickStart E2E Tests', function () {
+describe('fresh-inno App', () => {
+  let page: FreshInnoPage;
 
-  let expectedMsg = 'Hello Angular';
-
-  beforeEach(function () {
-    browser.get('');
+  beforeEach(() => {
+    page = new FreshInnoPage();
   });
 
-  it('should display: ' + expectedMsg, function () {
-    expect(element(by.css('h1')).getText()).toEqual(expectedMsg);
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
-
 });
