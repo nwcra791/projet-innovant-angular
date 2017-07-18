@@ -1,5 +1,5 @@
 {
-  "name": "fresh-inno",
+  "name": "cleantmp",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -13,21 +13,22 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.0.0",
+    "@angular/cli": "^1.2.1",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.3.0",
+    "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.3.0",
+    "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
+    "ng-semantic": "^1.1.13",
     "ng2-semantic-ui": "^0.9.2",
-    "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",

@@ -1,16 +1,8 @@
-# Travel Skills
+# Cleantmp
 
-This project work with [Angular](https://github.com/angular) version 4.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
-
-## Build for production
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-For add the Angular's front to the back-end of the app, the `dist/` directory generated above need to be placed in the public views folder.
-Angular manage his own routing system on the client device, so only one view need to be render by the server.
-The final step is to render the `dist/<angular>.html` as view when the user access to the `/` route
-
-## Run for development
+## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -18,6 +10,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
 
@@ -27,3 +22,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

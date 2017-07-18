@@ -1,14 +1,14 @@
-import { FreshInnoPage } from './app.po';
+import { CleantmpPage } from './app.po';
 
-describe('fresh-inno App', () => {
-  let page: FreshInnoPage;
+describe('cleantmp App', () => {
+  let page: CleantmpPage;
 
   beforeEach(() => {
-    page = new FreshInnoPage();
+    page = new CleantmpPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

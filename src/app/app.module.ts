@@ -1,59 +1,68 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppComponent }  from './app.component';
-import { HttpModule } from '@angular/http';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+
+import {SuiModule} from 'ng2-semantic-ui';
+
 import { RouterModule, Routes } from '@angular/router';
+import { MenuComputerComponent } from './menu-computer/menu-computer.component';
+import { MenuTabMobileComponent } from './menu-tab-mobile/menu-tab-mobile.component';
+import { HugeHeaderLayoutComponent } from './huge-header-layout/huge-header-layout.component';
+import { LoginComponent } from './login/login.component';
+import { EnterLayoutComponent } from './enter-layout/enter-layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { ManagerLayoutComponent } from './manager-layout/manager-layout.component';
+import { HosterComponent } from './hoster/hoster.component';
+import { TravellerComponent } from './traveller/traveller.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
-import { MenuComponent } from './components/menu/menu.component';
-import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.component';
-import { LoginRegisterComponent } from './components/login-register/login-register.component';
-import { HomeComponent } from './components/home/home.component';
-import { AnnonceComponent} from './components/annonce/annonce.component';
-import { CardComponent } from './components/card/card.component';
-
-import { LoggingService } from './services/logging.service';
-import { HttpService } from './services/http.service';
-import { NgSemanticModule } from 'ng-semantic';
-
-
-import { FormsModule } from '@angular/forms';
-
-
-const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'annonce', component: AnnonceComponent},
-  {path: 'card', component: CardComponent},
-  {path: 'login-register', component: LoginRegisterComponent},
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'start', pathMatch: 'full'},
+  { path: 'start', component: HugeHeaderLayoutComponent, children: [
+    { path: '', component: HomeComponent },
+    { path: '**', component: PageNotFoundComponent }
+  ]},
+  { path: 'enter', component: EnterLayoutComponent, children: [
+    { path: 'l', component: LoginComponent },
+    { path: 'r', component: RegisterComponent },
+    { path: '**', component: PageNotFoundComponent }
+  ]},
+  { path: 'manager', component: ManagerLayoutComponent, children: [
+    { path: 'hoster', component: HosterComponent },
+    { path: 'traveller', component: TravellerComponent },
+    { path: '**', component: PageNotFoundComponent }
+  ]},
+  { path: '**', redirectTo: 'enter/not-found', pathMatch: 'full'},
 ];
 
 @NgModule({
-  imports:      [
-                  RouterModule.forRoot(routes),
-                  BrowserModule,
-                  RouterModule,
-                  HttpModule,
-                  FormsModule,
-                  NgSemanticModule
-                ],
   declarations: [
-                  AppComponent,
-                  HomeComponent,
-                  LoginRegisterComponent,
-                  MenuComponent,
-                  MenuMobileComponent,
-                  AnnonceComponent,
-                  CardComponent
-                ],
-  bootstrap:    [
-                  AppComponent
-
-                ],
-  providers:    [
-                  LoggingService,
-                  HttpService
-                ]
+    AppComponent,
+    HomeComponent,
+    MenuComputerComponent,
+    MenuTabMobileComponent,
+    HugeHeaderLayoutComponent,
+    LoginComponent,
+    EnterLayoutComponent,
+    PageNotFoundComponent,
+    RegisterComponent,
+    ManagerLayoutComponent,
+    HosterComponent,
+    TravellerComponent,
+    ToolbarComponent
+  ],
+  imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
+    BrowserModule,
+    SuiModule,
+    RouterModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-
 export class AppModule { }

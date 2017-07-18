@@ -1,0 +1,36 @@
+<div class="ui large secondary inverted pointing menu">
+  <div class="ui container">
+    <a class="item" (click)="openSidebar()" [style.visibility]="sidebarStatusInv"><i class="icon sidebar"></i></a>
+  </div>
+</div>
+
+<div class="ui left demo vertical inverted sidebar labeled icon menu {{ sidebarStatus }}">
+  <a class="disabled item" (click)="closeSidebar()">
+    <i style="color: darkred !important;" class="close icon"></i>
+  </a>
+  <a class="item" routerLink="/">
+    <i class="home icon"></i>
+    Accueil
+  </a>
+  <a class="item" routerLink="/manager/hoster">
+    <i class="block layout icon"></i>
+    Devenir hote
+  </a>
+  <a class="item" routerLink="/manager/traveller">
+    <i class="smile icon"></i>
+    Organiser son voyage
+  </a>
+
+  <a class="active teal inverted item" routerLink="/enter/l">
+    <i class="smile icon"></i>
+    Se connecter
+  </a>
+
+  <a class="active green inverted item" routerLink="/enter/r">
+    <i class="smile icon"></i>
+    S'inscrire
+  </a>
+
+
+</div>
+
