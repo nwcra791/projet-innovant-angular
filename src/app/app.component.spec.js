@@ -1,28 +1,28 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var app_component_1 = require("./app.component");
-var testing_1 = require("@angular/core/testing");
-var platform_browser_1 = require("@angular/platform-browser");
+var testing_1 = require('@angular/core/testing');
+var app_component_1 = require('./app.component');
 describe('AppComponent', function () {
-    var de;
-    var comp;
-    var fixture;
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
-            declarations: [app_component_1.AppComponent]
-        })
-            .compileComponents();
+            declarations: [
+                app_component_1.AppComponent
+            ],
+        }).compileComponents();
     }));
-    beforeEach(function () {
-        fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
-        comp = fixture.componentInstance;
-        de = fixture.debugElement.query(platform_browser_1.By.css('h1'));
-    });
-    it('should create component', function () { return expect(comp).toBeDefined(); });
-    it('should have expected <h1> text', function () {
+    it('should create the app', testing_1.async(function () {
+        var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
+        var app = fixture.debugElement.componentInstance;
+        expect(app).toBeTruthy();
+    }));
+    it("should have as title 'app'", testing_1.async(function () {
+        var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
+        var app = fixture.debugElement.componentInstance;
+        expect(app.title).toEqual('app');
+    }));
+    it('should render title in a h1 tag', testing_1.async(function () {
+        var fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
         fixture.detectChanges();
-        var h1 = de.nativeElement;
-        expect(h1.innerText).toMatch(/angular/i, '<h1> should say something about "Angular"');
-    });
+        var compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!!');
+    }));
 });
-//# sourceMappingURL=app.component.spec.js.map

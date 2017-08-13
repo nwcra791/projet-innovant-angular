@@ -18,6 +18,8 @@ import { ManagerLayoutComponent } from './manager-layout/manager-layout.componen
 import { HosterComponent } from './hoster/hoster.component';
 import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SearchUiComponent } from './search-ui/search-ui.component';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
@@ -38,6 +40,8 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'enter/not-found', pathMatch: 'full'},
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,8 @@ const appRoutes: Routes = [
     ManagerLayoutComponent,
     HosterComponent,
     TravellerComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SearchUiComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -60,9 +65,10 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     SuiModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
