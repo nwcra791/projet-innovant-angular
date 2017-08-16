@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './huge-header-layout.component.html',
   styleUrls: ['./huge-header-layout.component.css']
 })
+
 export class HugeHeaderLayoutComponent implements OnInit {
 
   constructor() { }

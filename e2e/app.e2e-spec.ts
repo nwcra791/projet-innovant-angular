@@ -1,10 +1,10 @@
-import { CleantmpPage } from './app.po';
+import { Client2Page } from './app.po';
 
-describe('cleantmp App', () => {
-  let page: CleantmpPage;
+describe('client2 App', () => {
+  let page: Client2Page;
 
   beforeEach(() => {
-    page = new CleantmpPage();
+    page = new Client2Page();
   });
 
   it('should display welcome message', () => {

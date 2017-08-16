@@ -18,7 +18,12 @@ import { ManagerLayoutComponent } from './manager-layout/manager-layout.componen
 import { HosterComponent } from './hoster/hoster.component';
 import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LoggingService } from "./services/logging.service";
+import { HttpService } from "./services/http.service";
+import { HttpModule } from "@angular/http"
+import {HttpClientModule } from "@angular/common/http";
 
+import { FormsModule } from "@angular/forms"
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
   { path: 'start', component: HugeHeaderLayoutComponent, children: [
@@ -60,9 +65,15 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     SuiModule,
-    RouterModule
+    RouterModule,
+    HttpModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+      HttpService,
+      LoggingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
