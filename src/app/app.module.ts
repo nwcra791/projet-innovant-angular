@@ -1,11 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
-import {SuiModule} from 'ng2-semantic-ui';
-
+import { SuiModule} from 'ng2-semantic-ui';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComputerComponent } from './menu-computer/menu-computer.component';
 import { MenuTabMobileComponent } from './menu-tab-mobile/menu-tab-mobile.component';
@@ -21,27 +18,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoggingService } from "./services/logging.service";
 import { HttpService } from "./services/http.service";
 import { HttpModule } from "@angular/http"
-import {HttpClientModule } from "@angular/common/http";
-
-import { FormsModule } from "@angular/forms"
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'start', pathMatch: 'full'},
-  { path: 'start', component: HugeHeaderLayoutComponent, children: [
-    { path: '', component: HomeComponent },
-    { path: '**', component: PageNotFoundComponent }
-  ]},
-  { path: 'enter', component: EnterLayoutComponent, children: [
-    { path: 'l', component: LoginComponent },
-    { path: 'r', component: RegisterComponent },
-    { path: '**', component: PageNotFoundComponent }
-  ]},
-  { path: 'manager', component: ManagerLayoutComponent, children: [
-    { path: 'hoster', component: HosterComponent },
-    { path: 'traveller', component: TravellerComponent },
-    { path: '**', component: PageNotFoundComponent }
-  ]},
-  { path: '**', redirectTo: 'enter/not-found', pathMatch: 'full'},
-];
+import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from "@angular/forms";
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -60,15 +40,16 @@ const appRoutes: Routes = [
     ToolbarComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes
-    ),
     BrowserModule,
     SuiModule,
     RouterModule,
     HttpModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDuje1pzXQ1EirN5z7LCMCmbqUXmjO4kv8'
+    })
   ],
   providers: [
       HttpService,

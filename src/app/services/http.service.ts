@@ -10,13 +10,19 @@ export class HttpService {
 
   headers = new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });
+  secret = sessionStorage.getItem("token");
+  setSecret(xdc : string) {
+      this.secret = xdc;
+  }
 
-  /*get(param: string) {
-    let options = new RequestOptions({ headers: this.headers });
+  get(param: string) {
+    let authToken = localStorage.getItem('auth_token');
+    let headers = new Headers({ 'Accept': 'application/json' });
+    headers.append('session-id', this.secret);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get("http://localhost:8080/"+param,options);
 
-    return this.http.get("http://localhost:8080/" + param, options)
-        .map((res: Response) => res.json());
-  }*/
+  }
 
   post(param: string, data: string) {
     let options = new RequestOptions({ headers: this.headers });

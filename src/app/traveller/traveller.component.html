@@ -1,3 +1,65 @@
-<p>
-  traveller works!
-</p>
+<style>
+.card
+{
+  margin-left: 22% !important;
+  margin-right: 22% !important;
+}
+</style>
+<script language='javascript'>
+$(document).ready(function () {
+  $('.ui.accordion').accordion();
+});
+</script>
+<div class="ui grid container">
+  <div class="seven wide column">
+    
+    <!-- Trip selector -->
+    <h4 class="ui horizontal divider header">
+      <i class="world icon"></i>Voyages
+    </h4>
+    <sui-select class="selection" [ngModel]="selectedOption" [options]="voyage" labelField="name" #select>
+      <sui-select-option *ngFor="let voyage of voyages" [value]="voyage"></sui-select-option>
+    </sui-select>
+
+    <h4 class="ui horizontal divider header">
+      <i class="camera retro icon"></i>Experiences
+    </h4>
+
+    <!-- Experiences Selector -->
+    <sui-accordion class="styled fluid">
+      <sui-accordion-panel [(isOpen)]="experience.show" *ngFor="let experience of experiences">
+        <div title>
+          <i class="dropdown icon"></i>
+          {{experience.title}}
+        </div>
+        <div content>
+          <p>{{experience.content}}</p>
+          <div class="ui divided items">
+            <h5>Gallerie</h5>
+            <div class="item">
+              <div class="ui medium image">
+                <img src="http://cdn.pcwallart.com/images/transylvanian-landscape-wallpaper-2.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        </sui-accordion-panel>
+      </sui-accordion>
+    </div>
+
+    <!-- Map -->
+    <div class="nine wide column">
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker (markerClick)="updateDiv()" [latitude]="lat" [longitude]="lng">
+          <agm-info-window>
+            <div class="one column row">
+              <h3>Experience #3</h3>
+              <strong>Mon sejour chez Lucas</strong>
+              <p>La vue etait magnifique !</p>
+              <img width="150px" src="http://cdn.pcwallart.com/images/transylvanian-landscape-wallpaper-2.jpg">
+            </div>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+    <!-- </div> -->
