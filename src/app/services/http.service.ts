@@ -21,11 +21,18 @@ export class HttpService {
     headers.append('session-id', this.secret);
     let options = new RequestOptions({ headers: headers });
     return this.http.get("http://localhost:8080/"+param,options);
-
   }
 
   post(param: string, data: string) {
     let options = new RequestOptions({ headers: this.headers });
+    return this.http.post("http://localhost:8080/" + param, data, options)
+  }
+
+  authPost(param: string, data: string) {
+    let headers = this.headers;
+    headers.append('session-id', this.secret);
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers });
     return this.http.post("http://localhost:8080/" + param, data, options)
   }
 }
