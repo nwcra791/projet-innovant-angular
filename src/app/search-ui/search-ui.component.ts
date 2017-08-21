@@ -22,7 +22,7 @@ export class SearchUiComponent implements OnInit {
         instantsearch.widgets.searchBox({
           container: '#search-box',
           autofocus: false,
-          placeholder: 'recherchez une anoonce',
+          placeholder: 'recherchez une anonce',
           poweredBy: false
         })
     );
@@ -90,6 +90,18 @@ export class SearchUiComponent implements OnInit {
               }
           })
       );
+
+/*    this.search.addWidget(
+        instantsearch.widgets.rangeSlider({
+            container: '#seat_filter',
+            attributeName: 'nb_seat',
+            templates: {
+                header: 'Capacité d\'accueil'
+            },
+            min: 1,
+            max: 10
+        })
+    );*/
 
     this.search.addWidget(
         instantsearch.widgets.pagination({
