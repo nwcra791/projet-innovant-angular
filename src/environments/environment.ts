@@ -9,7 +9,7 @@ export const environment = {
   algolia: {
     appId: 'G5YU8MWMX3',
     apiKey: '8fb9a56301949ce2a6fd28f4c16a8936',
-    indexName: 'getstarted_actors',
+    indexName: 'dev_Offers',
     urlSync: false
   }
 

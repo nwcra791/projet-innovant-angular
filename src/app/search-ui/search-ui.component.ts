@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import * as instantsearch from 'instantsearch.js'
+import {$} from "protractor";
 
 @Component({
   selector: 'search-ui',
@@ -22,9 +23,10 @@ export class SearchUiComponent implements OnInit {
           container: '#search-box',
           autofocus: false,
           placeholder: 'recherchez une anoonce',
-          poweredBy: true
+          poweredBy: false
         })
     );
+
     // initialize hits widget
     this.search.addWidget(
         instantsearch.widgets.hits({
@@ -34,16 +36,19 @@ export class SearchUiComponent implements OnInit {
             item: `<div class="ui items">
             <div class="item" style="margin-bottom: 15px">
               <div class="ui small image">
-                    <img src=https://image.tmdb.org/t/p/w300{{image_path}} >
+                    <img src={{img_ulr}} style="width: 500px">
               </div>
               <div class="content">
                 <div class="header">{{{_highlightResult.name.value}}}</div>
                 <div class="meta">
-                  <span class="price"><strong>Result {{objectID}}</strong>:</span>
-                  <span class="stay">{{{_highlightResult.name.value}}}</span>
+                  <span class="price"><strong>Domaine :</strong> {{domaine}} <strong style="margin-left: 4%"> Capacité d'accueil :</strong> {{nb_seat}}
+                  <strong style="margin-left: 4%"> Lieu :</strong> {{city}}</span>
+                  <!--<span class="stay">{{{_highlightResult.name.value}}}</span>-->
                 </div>
                 <div class="description">
-                  <p></p>
+                  <p>
+                  <strong>Desciption : </strong>Ici une description de l'annonce merveilleusement bien rédiger par l'utilisateur :) 500 charactère max je pense...
+                  </p>
                 </div>
               </div>
             </div>`
@@ -57,6 +62,34 @@ export class SearchUiComponent implements OnInit {
           container: '#stats'
         })
     );
+
+
+      this.search.addWidget(
+          instantsearch.widgets.refinementList({
+              container: '#domaine_filter',
+              attributeName: 'domaine',
+              operator: 'or',
+              cssClasses: {
+                  list: 'item-filter',
+                  count: 'badge pull-left',
+                  active: 'active'
+              },
+              templates: {
+                  header: 'Domaine :'
+              }
+          })
+      );
+
+      this.search.addWidget(
+          instantsearch.widgets.refinementList({
+              container: '#city_filter',
+              attributeName: 'city',
+              operator: 'or',
+              templates: {
+                  header: 'Ville :'
+              }
+          })
+      );
 
     this.search.addWidget(
         instantsearch.widgets.pagination({
@@ -74,6 +107,8 @@ export class SearchUiComponent implements OnInit {
           }
         })
     );
+
+
 
     this.search.start();
   }
