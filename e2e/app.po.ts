@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class CleantmpPage {
+export class Client2Page {
   navigateTo() {
     return browser.get('/');
   }

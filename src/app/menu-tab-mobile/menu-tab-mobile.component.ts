@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoggingService } from "../services/logging.service";
 
 @Component({
   selector: 'app-menu-tab-mobile',
@@ -10,8 +11,10 @@ export class MenuTabMobileComponent implements OnInit {
   sidebarStatus = '';
   sidebarStatusInv = '';
 
-  constructor() {
+  logging: LoggingService;
 
+  constructor(logging: LoggingService) {
+    this.logging = logging;
   }
   openSidebar = function (): void
   {

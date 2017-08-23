@@ -20,7 +20,12 @@ import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchUiComponent } from './search-ui/search-ui.component';
 
+import { LoggingService } from "./services/logging.service";
+import { HttpService } from "./services/http.service";
+import { HttpModule } from "@angular/http"
+import {HttpClientModule } from "@angular/common/http";
 
+import { FormsModule } from "@angular/forms"
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
   { path: 'start', component: HugeHeaderLayoutComponent, children: [
@@ -39,8 +44,6 @@ const appRoutes: Routes = [
   ]},
   { path: '**', redirectTo: 'enter/not-found', pathMatch: 'full'},
 ];
-
-
 
 @NgModule({
   declarations: [
@@ -66,9 +69,14 @@ const appRoutes: Routes = [
     BrowserModule,
     SuiModule,
     RouterModule,
+    HttpModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+      HttpService,
+      LoggingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
