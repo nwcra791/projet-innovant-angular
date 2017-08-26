@@ -18,14 +18,20 @@ import { ManagerLayoutComponent } from './manager-layout/manager-layout.componen
 import { HosterComponent } from './hoster/hoster.component';
 import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { SearchUiComponent } from './search-ui/search-ui.component';
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
 import { LoggingService } from "./services/logging.service";
 import { HttpService } from "./services/http.service";
 import { HttpModule } from "@angular/http"
 import {HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { UploadService } from './uploads/shared/upload.service';
+import { UploadFormComponent } from './uploads/upload-form/upload-form.component'
+import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireDatabase} from "angularfire2/database";
 
-import { FormsModule } from "@angular/forms"
+export const firebaseConfig = environment.firebase;
+
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
   { path: 'start', component: HugeHeaderLayoutComponent, children: [
@@ -60,7 +66,7 @@ const appRoutes: Routes = [
     HosterComponent,
     TravellerComponent,
     ToolbarComponent,
-    SearchUiComponent,
+    UploadFormComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -71,11 +77,15 @@ const appRoutes: Routes = [
     RouterModule,
     HttpModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
       HttpService,
-      LoggingService
+      LoggingService,
+      UploadService,
+      AngularFireAuth,
+      AngularFireDatabase
   ],
   bootstrap: [AppComponent]
 })
