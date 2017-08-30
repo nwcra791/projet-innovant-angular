@@ -15,9 +15,7 @@ import { HosterComponent } from './hoster/hoster.component';
 // import { TravellerComponent } from './traveller/traveller.component';
 import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
 import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { LoggingService } from "./services/logging.service";
-import { HttpService } from "./services/http.service";
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
