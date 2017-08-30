@@ -114,7 +114,7 @@ export class TravellerComponent implements OnInit {
   mapClicked($event: any) {
     // editing = if user is on the "Ajouter une experience" pannel
     if (this.editing) {
-      if (this.markers.length > this.experiences.length) {
+      if (this.markers.length == this.experiences.length) {
         this.markers.pop();
         this.experiences.pop();
       }
