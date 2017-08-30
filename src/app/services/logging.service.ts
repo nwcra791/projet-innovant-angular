@@ -15,6 +15,7 @@ export class LoggingService {
   private secret: string = "";
 
   public setConnInfos(connInfos: Object): void {
+    sessionStorage.setItem("user", connInfos.toString());
     this.connInfos = connInfos;
   }
 
@@ -23,6 +24,7 @@ export class LoggingService {
   }
 
   public setSecret(secret: string): void {
+    sessionStorage.setItem("token", secret);
     this.secret = secret;
   }
 

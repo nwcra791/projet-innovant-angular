@@ -1,3 +1,109 @@
-<p>
-  traveller works!
-</p>
+<div class="ui grid container">
+  <div class="seven wide column">
+
+    <!-- Trip selector -->
+    <h4 class="ui horizontal divider header">
+      <i class="world icon"></i>Voyages
+    </h4>
+    <sui-select class="selection" [(ngModel)]="selectedOption" [options]="voyage" labelField="name" #select>
+      <sui-select-option *ngFor="let voyage of voyages" (click)="loadExperiences(voyage)" [value]="voyage"></sui-select-option>
+    </sui-select>
+
+    <h4 class="ui horizontal divider header">
+      <i class="camera retro icon"></i>Experiences
+    </h4>
+
+    <!-- Experiences Selector -->
+    <sui-accordion class="styled fluid">
+      <!-- Add an experience (should it be placed at the end ?) -->
+      <sui-accordion-panel (click)="isEditing()">
+        <div title>
+          <i class="plus icon"></i>
+          Ajouter une experience
+        </div>
+        <div content>
+          <div class="ui fluid form">
+            <div class="field">
+              <label>Titre</label>
+              <input placeholder="Titre de votre experience" type="text" [(ngModel)]="newTitle">
+            </div>
+            <div class="field">
+              <label>Contenu</label>
+              <textarea [(ngModel)]="newContent"></textarea>
+            </div>
+            <div class="ui divider"></div>
+            <h5 class="ui teal header">
+              Cliquez sur la carte pour positionner votre experience
+            </h5>
+            <div class="two fields">
+              <div class="field">
+                <label>Latitude</label>
+                <div class="ui disabled input">
+                  <input type="text" placeholder="0.000000" [(ngModel)]="newLatitude">
+                </div>
+              </div>
+              <div class="field">
+                <label>Longitude</label>
+                <div class="ui disabled input">
+                  <input type="text" placeholder="0.000000" [(ngModel)]="newLongitude">
+                </div>
+              </div>
+            </div>
+            <div (click)="saveExperience()" class="ui blue button">
+              <i class="save icon"></i> Enregistrer
+            </div>
+          </div>
+        </div>
+      </sui-accordion-panel>
+      <sui-accordion-panel [(isOpen)]="experience.show" *ngFor="let experience of experiences">
+        <div title>
+          <i class="dropdown icon"></i>
+          {{experience.title}}
+        </div>
+        <div content>
+          <p>{{experience.content}}</p>
+          <div class="ui divided items">
+            <h5>Gallerie</h5>
+            <div class="item">
+              <div class="ui medium image">
+                <img src="http://cdn.pcwallart.com/images/transylvanian-landscape-wallpaper-2.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </sui-accordion-panel>
+    </sui-accordion>
+  </div>
+
+  <!-- Map -->
+  <div class="nine wide column">
+    <agm-map [latitude]="lat" [longitude]="lng" [(zoom)]="zoom" [disableDefaultUI]="false"
+      [zoomControl]="false" (mapClick)="mapClicked($event)">
+      <!-- Markers -->
+      <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
+       (dragEnd)="markerDragEnd(m, $event)">
+          <!-- Markers content window (OnClick) -->
+          <agm-info-window>
+            <div class="one column row" style="width:200px;">
+              <h3>{{experiences[i].title}}</h3>
+              <span>{{experiences[i].content}}</span>
+              <h5>La vue etait magnifique !</h5>
+              <img width="200px" src="http://cdn.pcwallart.com/images/transylvanian-landscape-wallpaper-2.jpg">
+            </div>
+          </agm-info-window>
+      </agm-marker>
+
+      <!-- <agm-marker (markerClick)="updateDiv()" [latitude]="lat" [longitude]="lng">
+        <agm-info-window>
+          <div class="one column row">
+            <h3>Experience #3</h3>
+            <strong>Mon sejour chez Lucas</strong>
+            <p>La vue etait magnifique !</p>
+            <img width="150px" src="http://cdn.pcwallart.com/images/transylvanian-landscape-wallpaper-2.jpg">
+          </div>
+        </agm-info-window>
+      </agm-marker> -->
+    </agm-map>
+  </div>
+  <!-- </div> -->

@@ -27,6 +27,7 @@ export class MenuTabMobileComponent implements OnInit {
     this.sidebarStatus = 'hidden';
     this.sidebarStatusInv = 'visible';
   };
+  
   ngOnInit() {
     this.sidebarStatus = 'hidden';
     this.sidebarStatusInv = 'visible';

@@ -1,17 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Router } from "@angular/router";
 import 'rxjs/add/operator/catch';
-import {Headers, RequestOptions} from "@angular/http";
-import {LoggingService} from "../services/logging.service";
-import {HttpService} from "../services/http.service";
+import { Headers, RequestOptions } from "@angular/http";
+import { LoggingService } from "../services/logging.service";
+import { HttpService } from "../services/http.service";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
+
   private http: HttpService;
   private router: Router;
   private logging: LoggingService;
@@ -34,8 +36,9 @@ export class RegisterComponent implements OnInit {
               res => {
                   //console.log(res)
                   //this.logging.login()
-                  //this.logging.setSecret(res['session-id'])
-                  //this.logging.setConnInfos(res['User'])
+                  this.logging.setSecret(res.json()['session-id']);
+                  this.logging.setConnInfos(res.json()['User']);
+                  this.http.setSecret(this.logging.getSecret());
                   this.router.navigate(['/start']);
               }
 
