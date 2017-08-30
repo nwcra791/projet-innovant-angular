@@ -23,6 +23,10 @@ import { HttpService } from "./services/http.service";
 import { HttpModule } from "@angular/http"
 import {HttpClientModule } from "@angular/common/http";
 
+//import "materialize-css"
+//import * as $ from "jquery";
+import { MaterializeModule } from "angular2-materialize";
+
 import { FormsModule } from "@angular/forms"
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full'},
@@ -57,12 +61,13 @@ const appRoutes: Routes = [
     ManagerLayoutComponent,
     HosterComponent,
     TravellerComponent,
-    ToolbarComponent
+    ToolbarComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes
     ),
+    MaterializeModule,
     BrowserModule,
     SuiModule,
     RouterModule,
