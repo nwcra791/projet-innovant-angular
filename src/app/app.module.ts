@@ -13,7 +13,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 import { ManagerLayoutComponent } from './manager-layout/manager-layout.component';
 import { HosterComponent } from './hoster/hoster.component';
-import { TravellerComponent } from './traveller/traveller.component';
+import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
+import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
+
+// import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoggingService } from "./services/logging.service";
 import { HttpService } from "./services/http.service";
@@ -39,7 +42,8 @@ import { AgmCoreModule } from '@agm/core';
     RegisterComponent,
     ManagerLayoutComponent,
     HosterComponent,
-    TravellerComponent,
+    TravellerTripComponent,
+    TravellerOfferComponent,
     ToolbarComponent,
   ],
   imports: [

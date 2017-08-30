@@ -12,7 +12,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 import { ManagerLayoutComponent } from './manager-layout/manager-layout.component';
 import { HosterComponent } from './hoster/hoster.component';
-import { TravellerComponent } from './traveller/traveller.component';
+// import { TravellerComponent } from './traveller/traveller.component';
+import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
+import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoggingService } from "./services/logging.service";
 import { HttpService } from "./services/http.service";
@@ -30,7 +32,11 @@ const appRoutes: Routes = [
   ]},
   { path: 'manager', component: ManagerLayoutComponent, children: [
     { path: 'hoster', component: HosterComponent },
-    { path: 'traveller', component: TravellerComponent },
+    { path: 'traveller', /*component: TravellerComponent*/ children:  [
+      { path: '', redirectTo: 'offer', pathMatch: 'full'},
+      { path: 'trip', component: TravellerTripComponent },
+      { path: 'offer', component: TravellerOfferComponent },
+    ]},
     { path: '**', component: PageNotFoundComponent }
   ]},
   { path: '**', redirectTo: 'enter/not-found', pathMatch: 'full'},
