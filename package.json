@@ -31,6 +31,7 @@
     "core-js": "^2.4.1",
     "firebase": "^4.3.0",
     "hammerjs": "^2.0.8",
+    "firebase-tools": "^3.9.2",
     "instantsearch.js": "^2.0.2",
     "jquery": "^2.2.4",
     "material-css": "^0.7.0",

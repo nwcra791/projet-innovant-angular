@@ -25,7 +25,12 @@
           </span>
           <textarea [(ngModel)]="details" type="text"></textarea>
         </div>
-
+        <div class="fields">
+        <span class="label">
+            choisissez une photo :
+        </span>
+        <app-upload-form></app-upload-form>
+      </div>
         <div (click)="onClickAddOffer()" class="ui right floated positive button">Enregistrer l'offre</div>
       </div>
       </div>
