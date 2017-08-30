@@ -8,6 +8,7 @@ import {$} from "protractor";
   templateUrl: './search-ui.component.html',
   styleUrls: ['./search-ui.component.css']
 })
+
 export class SearchUiComponent implements OnInit {
 
   search: any;
@@ -119,8 +120,6 @@ export class SearchUiComponent implements OnInit {
           }
         })
     );
-
-
 
     this.search.start();
   }
