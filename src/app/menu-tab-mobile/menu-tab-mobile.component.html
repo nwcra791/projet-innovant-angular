@@ -1,4 +1,4 @@
-<div class="ui large secondary inverted pointing menu">
+<div class="ui large secondary pointing menu">
   <div class="ui container">
     <a class="item" (click)="openSidebar()" [style.visibility]="sidebarStatusInv"><i class="icon sidebar"></i></a>
   </div>
@@ -34,7 +34,7 @@
 
 </div>
 
-<div class="ui left demo vertical inverted sidebar labeled icon menu {{ sidebarStatus }}" *ngIf="logging.isLogin()">
+<div class="ui left demo vertical sidebar labeled icon menu {{ sidebarStatus }}" *ngIf="logging.isLogin()">
     <a class="disabled item" (click)="closeSidebar()">
         <i style="color: darkred !important;" class="close icon"></i>
     </a>
