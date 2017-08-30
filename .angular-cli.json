@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+<<<<<<< HEAD
         "styles.css",
 	"../node_modules/materialize-css/dist/css/materialize.css"
       ],
@@ -27,6 +28,11 @@
       	 "../node_modules/hammerjs/hammer.js",
 	 "../node_modules/materialize-css/dist/js/materialize.js"
       ],
+=======
+        "styles.css"
+      ],
+      "scripts": [],
+>>>>>>> feature/algolia
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -62,4 +68,8 @@
     "styleExt": "css",
     "component": {}
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> feature/algolia

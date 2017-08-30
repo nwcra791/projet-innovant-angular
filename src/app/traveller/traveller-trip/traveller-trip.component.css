@@ -1,0 +1,8 @@
+agm-map {
+  height: 550px;
+  width: 650px;
+}
+
+marker.options: {
+    icon:'//developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"'
+}

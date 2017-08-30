@@ -13,8 +13,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 import { ManagerLayoutComponent } from './manager-layout/manager-layout.component';
 import { HosterComponent } from './hoster/hoster.component';
+<<<<<<< HEAD
 import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
 import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
+=======
+import { TravellerComponent } from './traveller/traveller.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SearchUiComponent } from './search-ui/search-ui.component';
+
+>>>>>>> feature/algolia
 
 // import { TravellerComponent } from './traveller/traveller.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -29,6 +36,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,15 +51,22 @@ import { AgmCoreModule } from '@agm/core';
     RegisterComponent,
     ManagerLayoutComponent,
     HosterComponent,
+<<<<<<< HEAD
     TravellerTripComponent,
     TravellerOfferComponent,
     ToolbarComponent,
+=======
+    TravellerComponent,
+    ToolbarComponent,
+    SearchUiComponent,
+>>>>>>> feature/algolia
   ],
   imports: [
     MaterializeModule,
     BrowserModule,
     SuiModule,
     RouterModule,
+<<<<<<< HEAD
     HttpModule,
     HttpClientModule,
     FormsModule,
@@ -62,7 +78,10 @@ import { AgmCoreModule } from '@agm/core';
   providers: [
       HttpService,
       LoggingService
+=======
+>>>>>>> feature/algolia
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
