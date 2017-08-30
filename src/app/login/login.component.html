@@ -1,22 +1,34 @@
+<style>
+  input[type=text]:focus {
+    border-bottom: none !important;
+    box-shadow: 0 0 0px black;
+    margin-bottom: 1px;
+  }
+</style>
 <div class="ui middle container aligned center aligned stackable grid" style="height: 100%">
   <div class="seven wide column middle aligned">
 
     <form class="ui large form">
 
       <div class="ui stacked segment">
-        <h2 class="ui orange icon header">
+
+        <h2 class="ui icon header" style="color: #f2711c">
+          <i class="ui login icon"></i>
           <div class="content">
             Se connecter
+
           </div>
+
         </h2>
+
         <div class="field">
-          <div class="ui left icon input">
+          <div class="ui left icon input" style="float: none !important;">
             <i class="user icon"></i>
             <input [(ngModel)]="email" type="text" name="email" placeholder="E-mail address">
           </div>
         </div>
         <div class="field">
-          <div class="ui left icon input">
+          <div class="ui left icon input"  style="float: none !important">
             <i class="lock icon"></i>
             <input [(ngModel)]="passwd" type="password" name="password" placeholder="Password">
           </div>
