@@ -24,14 +24,13 @@ export class UploadFormComponent implements OnInit {
   ngOnInit() {
     this.model = new model
     this.model.src = "../../assets/default_image.png";
-    // this.src = "../../assets/default_image.png"
   }
 
   detectFiles(event) {
     this.selectedFiles = event.target.files;
     let file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
-    var url: any = this.upSvc.pushUpload(this.currentUpload, this.model);
+    this.upSvc.pushUpload(this.currentUpload, this.model);
   }
 
   uploadSingle() {

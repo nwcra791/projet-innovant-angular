@@ -6,14 +6,40 @@
   }
 </style>
 <div class="ui grid container">
-  <div class="one column row">
+  <div class="column row">
     <div class="column">
       <div class="ui blue segment" style="padding-bottom: 40px">
       <h1 class="ui header center">Devenez hôte et recevez une aide précieuse</h1>
       <div class="ui form">
         <div class="fields">
           <div class="seven wide field">
-            <input [(ngModel)]="title" type="text" placeholder="Entrez le titre de votre offre" required>
+            <label>Titre de votre annonce</label>
+            <input [(ngModel)]="title" type="text" placeholder="Titre de votre annonce" required>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="six wide field">
+            <label>Adresse du logement</label>
+            <input [(ngModel)]="adress" type="text" placeholder="Adresse" required>
+          </div>
+          <div class="two wide field" style="margin-left: 20px !important;">
+            <label>Code postale</label>
+            <input [(ngModel)]="zipcode" type="text" placeholder="code postale" required>
+          </div>
+          <div class="four wide field" style="margin-left: 20px !important;">
+            <label>Ville</label>
+            <input [(ngModel)]="city" type="text" placeholder="Ville" required>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="eight wide field">
+            <input type="text" placeholder="8 Wide">
+          </div>
+          <div class="six wide field">
+            <input type="text" placeholder="6 Wide">
+          </div>
+          <div class="two wide field">
+            <input type="text" placeholder="2 Wide">
           </div>
         </div>
         <div class="sixteen wide field">
@@ -61,9 +87,7 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </div>
