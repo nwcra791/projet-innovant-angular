@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { HosterComponent } from './hoster/hoster.component';
 // import { TravellerComponent } from './traveller/traveller.component';
 import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
 import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
+import { TravellerComponent } from './traveller/traveller.component';
 
 
 const appRoutes: Routes = [
@@ -29,11 +30,14 @@ const appRoutes: Routes = [
     { path: '**', component: PageNotFoundComponent }
   ]},
   { path: 'manager', component: ManagerLayoutComponent, children: [
-    { path: 'hoster', component: HosterComponent },
-    { path: 'traveller', /*component: TravellerComponent*/ children:  [
-      { path: '', redirectTo: 'offer', pathMatch: 'full'},
+    { path: 'host', component: HosterComponent },
+    { path: 'traveller', /*component: TravellerComponent,*/ children:  [
+      { path: 'dashboard', component: TravellerComponent },
       { path: 'trip', component: TravellerTripComponent },
+      { path: 'trip/:id', component: TravellerTripComponent },
       { path: 'offer', component: TravellerOfferComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+      { path: '**', component: PageNotFoundComponent }
     ]},
     { path: '**', component: PageNotFoundComponent }
   ]},

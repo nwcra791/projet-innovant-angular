@@ -1,3 +1,116 @@
-<H1 style="text-align: center; margin-top: 15px;">
-  Trouver l'hôte de vos rêves !!
-</H1>
+<div class="ui container">
+
+  <h2 class="ui header">Dashboard Voyageur</h2>
+  <div class="ui two column grid">
+    <div class="column">
+      <table class="top attached ui basic table">
+        <thead>
+        <tr><th>Header</th>
+          <th>Header</th>
+          <th>Header</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+      </table>
+      <table class="attached ui table">
+        <tbody>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+      </table>
+      <table class="attached ui celled selectable table">
+        <tbody>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+      </table>
+      <table class="bottom attached ui celled table">
+        <thead>
+        <tr><th>Header</th>
+          <th>Header</th>
+          <th>Header</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="column">
+      <div class="ui segments">
+        <div class="ui segment">
+            <b>Vos voyages</b>
+        </div>
+        <div *ngFor="let voyage of voyages;let i = index" class="ui segment event"
+             style="cursor: pointer;" onmouseover="this.style.background='#f9f9f9';" onmouseout="this.style.background='';"
+             [routerLink]="['/manager/traveller/trip', i]">
+            <p>{{voyage.name}}</p>
+            <div class="meta">
+                <a class="like">
+                    <i class="like icon"></i> 4 Likes
+                </a>
+            </div>
+        </div>
+        <div class="ui segment">
+          <button class="ui blue icon button">
+              <i class="plus icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

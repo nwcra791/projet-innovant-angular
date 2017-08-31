@@ -17,22 +17,23 @@ import { TravellerTripComponent } from './traveller/traveller-trip/traveller-tri
 import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
 import { SearchUiComponent } from './search-ui/search-ui.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { LoggingService } from "./services/logging.service";
-import { HttpService } from "./services/http.service";
-import { HttpModule } from "@angular/http"
-import "materialize-css"
-import * as $ from "jquery";
-import { MaterializeModule } from "angular2-materialize";
-import { FormsModule } from "@angular/forms"
-import { HttpClientModule } from "@angular/common/http";
+import { TravellerComponent } from './traveller/traveller.component';
+import { LoggingService } from './services/logging.service';
+import { HttpService } from './services/http.service';
+import { HttpModule } from '@angular/http';
+import 'materialize-css';
+import * as $ from 'jquery';
+import { MaterializeModule } from 'angular2-materialize';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { UploadService } from './uploads/shared/upload.service';
-import { UploadFormComponent } from './uploads/upload-form/upload-form.component'
+import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {AngularFireDatabase} from "angularfire2/database";
+import { AngularFireDatabase } from 'angularfire2/database';
 
 export const firebaseConfig = environment.firebase;
 
@@ -56,6 +57,7 @@ export const firebaseConfig = environment.firebase;
     ToolbarComponent,
     UploadFormComponent,
     SearchUiComponent,
+    TravellerComponent
   ],
   imports: [
     MaterializeModule,

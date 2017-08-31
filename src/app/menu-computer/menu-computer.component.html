@@ -3,15 +3,26 @@
 <div class="ui large secondary menu" *ngIf="!logging.isLogin()" style="border:none; margin-bottom: -6px !important;">
   <div class="ui container">
     <a class="active item" routerLink="/">Accueil</a>
-    <a class="item" routerLink="/manager/hoster">Devenir hote</a>
-    <a class="item" routerLink="/manager/traveller">Vos Voyages</a>
-    <a class="item">Careers</a>
-    <div class="right menu">
+    <!-- <a class="item" routerLink="/manager/hoster">Devenir hote</a> -->
+    <!-- <a class="item" routerLink="/manager/traveller">Organiser son voyage</a> -->
+    <a class="item" routerLink="/manager/hoster">Espace hote</a>
+    <a class="item" routerLink="/manager/traveller">Espace voyageur</a>
+    <div class="right vertical menu">
       <div class="item">
-          <div class="ui buttons">
-        <a class="ui red button circular" routerLink="/enter/l" style="background-color: #f55c4d !important;border-radius: 18px 0px 0px 18px !important;">Se connecter</a>
-              <a class="ui primary button circular" style="background-color: #4d92f5 !important; border-radius: 0px 18px 18px 0px !important;" routerLink="/enter/r">S'inscrire</a>
-          </div>
+          <!-- <div class="ui button"> -->
+            <a class="ui red button circular" routerLink="/enter/l" style="background-color: #f55c4d !important;">Se deconnecter</a>
+            <!-- <a class="ui primary button circular" style="background-color: #4d92f5 !important; border-radius: 0px 18px 18px 0px !important;" routerLink="/enter/r">S'inscrire</a> -->
+          <!-- </div> -->
+      </div>
+      <div class="item">
+        <div class="ui left labeled button" tabindex="0">
+            <a class="ui basic red right pointing label">
+                23
+            </a>
+            <div class="ui icon red button">
+                <i class="alarm outline icon"></i>
+            </div>
+        </div>
       </div>
     </div>
   </div>
@@ -20,9 +31,9 @@
 <div class="ui large secondary menu" *ngIf="logging.isLogin()">
     <div class="ui container">
         <a class="active item" routerLink="/">Accueil</a>
-        <a class="item" routerLink="/manager/hoster">Devenir hote</a>
+        <a class="item" routerLink="/manager/host">Devenir hote</a>
+        <a class="item" routerLink="/manager/traveller">Espace voyageur</a>
         <a class="item" routerLink="/manager/traveller">Organiser son voyage</a>
-        <a class="item">Careers</a>
         <!-- <div class="right menu">
             <div class="item">
                 <a class="ui button" routerLink="/enter/l">Se connecter</a>
