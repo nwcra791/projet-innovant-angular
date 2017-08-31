@@ -12,7 +12,7 @@ export class UploadService {
   private basePath:string = '/profile-img';
   //uploads: FirebaseListObservable<Upload[]>;
 
-  pushUpload(upload: Upload) {
+  pushUpload(upload: Upload, model: {src: string}) {
     let storageRef = firebase.storage().ref();
     let uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
@@ -25,10 +25,11 @@ export class UploadService {
           console.log(error)
         },
         () => {
-          // upload success
-          upload.url = uploadTask.snapshot.downloadURL
-          upload.name = upload.file.name
+          model.src = uploadTask.snapshot.downloadURL;
+          upload.url = uploadTask.snapshot.downloadURL;
+          upload.name = upload.file.name;
           this.saveFileData(upload)
+
         }
     );
   }

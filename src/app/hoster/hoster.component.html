@@ -9,28 +9,35 @@
   <div class="one column row">
     <div class="column">
       <div class="ui blue segment" style="padding-bottom: 40px">
-      <h1 class="ui header blue">Ajouter</h1>
+      <h1 class="ui header center">Devenez hôte et recevez une aide précieuse</h1>
       <div class="ui form">
         <div class="fields">
-          <div class="nine wide field">
-            <input [(ngModel)]="title" type="text" placeholder="Entrez le titre de votre offre">
-          </div>
           <div class="seven wide field">
-            <input [(ngModel)]="userName" type="text" placeholder="Entrez votre nom">
+            <input [(ngModel)]="title" type="text" placeholder="Entrez le titre de votre offre" required>
           </div>
         </div>
         <div class="sixteen wide field">
           <span class="label">
-            Entrez le nom de votre offre :
+            Entrez les détails de votre offre :
           </span>
           <textarea [(ngModel)]="details" type="text"></textarea>
         </div>
-        <div class="fields">
+        <div class="row">
         <span class="label">
-            choisissez une photo :
-        </span>
-        <app-upload-form></app-upload-form>
-      </div>
+           Cliquez sur les images pour enregistrer vos photos :
+        </span><br>
+        <div>
+          <div id="img1" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
+          <div id="img2" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
+          <div id="img3" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
+          <br>
+        </div>
+        </div>
+        <br><br>
+        <div class="ui checkbox">
+          <input type="checkbox" name="example">
+          <label>Je certifie avoir pris connaissance des <a style="color: green !important;">conditions générales</a> et les avoir aceptées</label>
+        </div>
         <div (click)="onClickAddOffer()" class="ui right floated positive button">Enregistrer l'offre</div>
       </div>
       </div>

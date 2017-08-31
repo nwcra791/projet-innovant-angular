@@ -37,7 +37,6 @@ import {AngularFireDatabase} from "angularfire2/database";
 export const firebaseConfig = environment.firebase;
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

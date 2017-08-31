@@ -5,12 +5,15 @@
   Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
 </div>
 <div class="row">
-<label>
-  <input type="file" (change)="detectFiles($event)">
-</label>
-<button class="ui blue button"
+  <div class="image-upload" style="margin: 10px">
+    <label for="file-input">
+      <img src="{{model.src}}" class=" ui small image" />
+    </label>
+    <input id="file-input" type="file" (change)="detectFiles($event)"/>
+  </div>
+<!--<button class="ui blue button"
         [disabled]="!selectedFiles"
         (click)="uploadSingle()">
   Sauvegarder photo
-</button>
+</button>-->
 </div>

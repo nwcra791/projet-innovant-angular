@@ -4,27 +4,40 @@ import { Upload } from '../shared/upload';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireDatabase} from "angularfire2/database";
 
+export class model {
+  public src: string;
+}
+
 @Component({
   selector: 'app-upload-form',
   templateUrl: './upload-form.component.html',
   styleUrls: ['./upload-form.component.css'],
   providers: [UploadService, AngularFireAuth, AngularFireDatabase]
 })
-
-export class UploadFormComponent  {
-
+export class UploadFormComponent implements OnInit {
+  model: model;
   selectedFiles: FileList;
   currentUpload: Upload;
+  public src : string;
   constructor(private upSvc: UploadService) { }
+
+  ngOnInit() {
+    this.model = new model
+    this.model.src = "../../assets/default_image.png";
+    // this.src = "../../assets/default_image.png"
+  }
 
   detectFiles(event) {
     this.selectedFiles = event.target.files;
+    let file = this.selectedFiles.item(0);
+    this.currentUpload = new Upload(file);
+    var url: any = this.upSvc.pushUpload(this.currentUpload, this.model);
   }
 
   uploadSingle() {
-    let file = this.selectedFiles.item(0)
+    let file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload)
+    this.upSvc.pushUpload(this.currentUpload, this.model);
   }
 
  /* uploadMulti() {
