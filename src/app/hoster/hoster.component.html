@@ -19,7 +19,6 @@
         background-color: white !important;
     }
 </style>
-
 <div class="ui grid container">
     <div class="one column row">
         <div class="column">
@@ -78,28 +77,28 @@
                             </div>-->
                         </div>
                     </div>
-
                     <span class="label">
-          Entrez les détails de votre offre :
-        </span>
+                        Entrez les détails de votre offre :
+                    </span>
                     <textarea [(ngModel)]="details" type="text" style="width: 100% !important"></textarea>
                     <div class="row">
-        <span class="label">
-           Cliquez sur les images pour enregistrer vos photos :
-        </span><br>
                         <div>
-                            <div id="img1" style="float: left; margin: 10px;">
-                                <app-upload-form></app-upload-form>
+                            <div  style="float: left; margin: 10px;">
+                                <img id="img1" src="../../assets/default_image.png" class="ui small image" />
                             </div>
-                            <div id="img2" style="float: left; margin: 10px;">
-                                <app-upload-form></app-upload-form>
+                            <div style="float: left; margin: 10px;">
+                                <img id="img2" src="../../assets/default_image.png" class="hidden ui small image" />
                             </div>
-                            <div id="img3" style="float: left; margin: 10px;">
-                                <app-upload-form></app-upload-form>
+                            <div style="float: left; margin: 10px;">
+                                <img id="img3" src="../../assets/default_image.png" class="hidden ui small image" />
                             </div>
                             <br>
                         </div>
                     </div>
+                    <span class="label">
+                        Cliquez sur l'image ci-dessous pour ajouter une photo à votre annonce :
+                    </span><br>
+                    <app-upload-form></app-upload-form>
                     <br><br>
                     <div class="ui checkbox">
                         <input type="checkbox" name="example">

@@ -6,6 +6,8 @@ import {AngularFireDatabase} from "angularfire2/database";
 
 export class model {
   public src: string;
+  public current: number;
+  public path: string;
 }
 
 @Component({
@@ -18,12 +20,15 @@ export class UploadFormComponent implements OnInit {
   model: model;
   selectedFiles: FileList;
   currentUpload: Upload;
+  current: number;
   public src : string;
   constructor(private upSvc: UploadService) { }
 
   ngOnInit() {
-    this.model = new model
-    this.model.src = "../../assets/default_image.png";
+    this.model = new model;
+    this.model.src = "../../assets/add_image.jpg";
+    this.model.current = 1;
+    this.model.path = "/img_offer"
   }
 
   detectFiles(event) {
@@ -31,6 +36,7 @@ export class UploadFormComponent implements OnInit {
     let file = this.selectedFiles.item(0);
     this.currentUpload = new Upload(file);
     this.upSvc.pushUpload(this.currentUpload, this.model);
+    this.current = this.current + 1;
   }
 
   uploadSingle() {

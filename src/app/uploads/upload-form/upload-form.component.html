@@ -7,13 +7,8 @@
 <div class="row">
   <div class="image-upload" style="margin: 10px">
     <label for="file-input">
-      <img src="{{model.src}}" class=" ui small image" />
+      <img src="{{model.src}}" class=" ui icon image" />
     </label>
     <input id="file-input" type="file" (change)="detectFiles($event)"/>
   </div>
-<!--<button class="ui blue button"
-        [disabled]="!selectedFiles"
-        (click)="uploadSingle()">
-  Sauvegarder photo
-</button>-->
 </div>

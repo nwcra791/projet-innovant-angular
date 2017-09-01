@@ -16,10 +16,24 @@ export class HosterComponent implements OnInit {
     private city: any = "";
     private domaine: any = "";
     private nb_seat: any = "";
+    private img_url: any = "";
+    private img_url2: any = "";
+    private img_url3: any = "";
+
 
 
     constructor(http: HttpService) {
         this.http = http;
+    }
+
+
+    setImgUrl() {
+        var image = document.getElementById("img1") as HTMLImageElement;
+        this.img_url = image.src;
+        image = document.getElementById("img2") as HTMLImageElement;
+        this.img_url2 = image.src;
+        image = document.getElementById("img2") as HTMLImageElement;
+        this.img_url2 = image.src;
     }
 
     onClickAddOffer() {
@@ -29,6 +43,7 @@ export class HosterComponent implements OnInit {
         console.info(this.adress);
         console.info(this.zipcode);
         console.info(this.domaine);
+        this.setImgUrl();
 
         let headers = new Headers({
             'Content-Type': 'application/json'
@@ -52,6 +67,6 @@ export class HosterComponent implements OnInit {
     }
 
     ngOnInit() {
-    }
 
+    }
 }
