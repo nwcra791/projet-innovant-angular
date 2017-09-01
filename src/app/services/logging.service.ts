@@ -7,15 +7,15 @@ export class LoggingService {
 
   constructor() { }
 
-  private loginState: boolean = false;
+  private loginState = false;
   private connInfos: Object = {
 
   };
 
-  private secret: string = "";
+  private secret = '';
 
   public setConnInfos(connInfos: Object): void {
-    sessionStorage.setItem("user", connInfos.toString());
+    sessionStorage.setItem('user', JSON.stringify(connInfos));
     this.connInfos = connInfos;
   }
 
@@ -24,7 +24,7 @@ export class LoggingService {
   }
 
   public setSecret(secret: string): void {
-    sessionStorage.setItem("token", secret);
+    sessionStorage.setItem('token', secret);
     this.secret = secret;
   }
 
@@ -44,4 +44,9 @@ export class LoggingService {
     return this.loginState;
   }
 
+  public getMail(): string {
+      const user = JSON.parse(sessionStorage.getItem('user'));
+      // console.dir(user);
+      return user.email;
+  }
 }

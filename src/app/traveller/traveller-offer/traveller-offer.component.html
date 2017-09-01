@@ -1,6 +1,16 @@
-<div class="ui grid container">
-  <H1 style="text-align: center; margin-top: 15px;">
-    Trouver l'hôte de vos rêves !!
-  </H1>
-  <search-ui></search-ui>
+<div class="ui container">
+    <div class="ui pointing secondary menu">
+        <a style="font-size: 130%;" routerLink="/manager/traveller/dashboard" class="item" data-tab="first">Dashboard</a>
+        <a style="font-size: 130%;" routerLink="/manager/traveller/trip" class="item" data-tab="second">Voyages</a>
+        <a style="font-size: 130%;" routerLink="/manager/traveller/offer" class="item active" data-tab="third">Offres</a>
+        <a style="font-size: 130%;" routerLink="/manager/traveller" class="item" data-tab="fourth">Friends</a>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui grid container">
+        <H1 style="text-align: center; margin-top: 15px;">
+            Trouver l'hôte de vos rêves !!
+        </H1>
+        <search-ui></search-ui>
+    </div>
 </div>

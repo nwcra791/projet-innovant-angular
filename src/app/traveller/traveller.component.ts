@@ -18,6 +18,8 @@ export class TravellerComponent implements OnInit {
   private route;
   private logging: LoggingService;
   public voyages;
+  public sent = [];
+  public recieved = [];
 
   constructor(http: HttpService, logging: LoggingService) {
       this.http = http;
@@ -31,5 +33,24 @@ export class TravellerComponent implements OnInit {
               console.dir(res.json());
               this.voyages = res.json();
           });
+      this.http.get('messages').subscribe(
+          res => {
+              console.dir(res.json());
+              this.setupMessages(res.json());
+          });
   }
+
+   setupMessages(messages: any) {
+       for (const msg of messages) {
+           msg.sender = msg.sender.toLowerCase();
+           msg.recipient = msg.recipient.toLowerCase();
+           if (msg.sender === this.logging.getMail()) {
+               this.sent.push(msg);
+           } else {
+               this.recieved.push(msg);
+           }
+       }
+       this.sent.reverse();
+       this.recieved.reverse();
+   }
 }

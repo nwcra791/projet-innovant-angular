@@ -148,34 +148,35 @@ export class TravellerTripComponent implements OnInit {
 
   // build an experience before the request to the api
   saveExperience(vo) {
-    console.log(this.selectedOption.name);
-    // console.log(this.currentVoyage);
-    if (this.editing && this.newLatitude != null && this.newLongitude != null
-      && this.newTitle != null && this.newContent != null) {
-        this.currentVoyage = this.selectedOption;
-        this.markers.pop();
-        this.experiences.pop();
-        const data: string = JSON.stringify({
-          'content': this.newContent,
-          'title': this.newTitle,
-          'longitude': this.newLongitude,
-          'latitude': this.newLatitude,
-          'trip_uuid': this.selectedOption.uuid,
-          'offer_uuid': 'none' // here we can change none by a valid offer_uuid
-        });
-        console.log('sending data...');
-        this.addTripExperience(data);
-      } else
-        console.log('failed to send data :(');
-    }
+      console.log(this.selectedOption.name);
+      // console.log(this.currentVoyage);
+      if (this.editing && this.newLatitude != null && this.newLongitude != null
+          && this.newTitle != null && this.newContent != null) {
+          this.currentVoyage = this.selectedOption;
+          this.markers.pop();
+          this.experiences.pop();
+          const data: string = JSON.stringify({
+              'content': this.newContent,
+              'title': this.newTitle,
+              'longitude': this.newLongitude,
+              'latitude': this.newLatitude,
+              'trip_uuid': this.selectedOption.uuid,
+              'offer_uuid': 'none' // here we can change none by a valid offer_uuid
+          });
+          console.log('sending data...');
+          this.addTripExperience(data);
+      } else {
+          console.log('failed to send data :(');
+      }
+  }
 
     // set editing to true
-    isEditing() {
+  isEditing() {
       this.editing = true;
       console.log('editing');
-    }
+  }
 
-    updateDiv() {
+  updateDiv() {
       console.log('test');
     }
   }
