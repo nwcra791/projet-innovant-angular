@@ -20,11 +20,14 @@ export class MenuComputerComponent implements OnInit {
     }
 
     ngOnInit() {
-        moment.lang('fr');
+        moment.locale('fr');
         this.http.get('notifications').subscribe(
             res => {
                 console.log(res.json());
                 this.setUpEvents(res.json().received);
+                this.setUpEvents(res.json().sent);
+                this.sortByDueDate();
+                this.events.reverse();
             });
     }
 
@@ -41,5 +44,11 @@ export class MenuComputerComponent implements OnInit {
             console.log(event.date);
             this.events.push(event);
         }
+    }
+
+    sortByDueDate(): void {
+        this.events.sort((a: any, b: any) => {
+            return a.date.getTime() - b.date.getTime();
+        });
     }
 }
