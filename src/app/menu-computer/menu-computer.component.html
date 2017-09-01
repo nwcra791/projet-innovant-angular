@@ -1,31 +1,30 @@
-
-
 <div class="ui large secondary menu" *ngIf="!logging.isLogin()" style="border:none; margin-bottom: -6px !important;">
-  <div class="ui container">
-    <a class="active item" routerLink="/">Accueil</a>
-    <!-- <a class="item" routerLink="/manager/hoster">Devenir hote</a> -->
-    <!-- <a class="item" routerLink="/manager/traveller">Organiser son voyage</a> -->
-    <a class="item" routerLink="/manager/host">Espace hote</a>
-    <a class="item" routerLink="/manager/traveller">Espace voyageur</a>
-    <div class="right vertical menu">
-      <div class="item" suiPopup [popupTemplate]="popupTemplate" popupTrigger="outsideClick">
-        <div class="ui left labeled button" tabindex="0">
-            <a class="ui basic red right pointing label">
-                23
-            </a>
-            <div class="ui icon red button">
-                <i class="alarm outline icon"></i>
+    <div class="ui container">
+        <a class="active item" routerLink="/">Accueil</a>
+        <!-- <a class="item" routerLink="/manager/hoster">Devenir hote</a> -->
+        <!-- <a class="item" routerLink="/manager/traveller">Organiser son voyage</a> -->
+        <a class="item" routerLink="/manager/host">Espace hote</a>
+        <a class="item" routerLink="/manager/traveller">Espace voyageur</a>
+        <div class="right vertical menu">
+            <div class="item" suiPopup [popupTemplate]="popupTemplate" popupTrigger="outsideClick">
+                <div class="ui left labeled button" tabindex="0">
+                    <a class="ui basic red right pointing label">
+                        23
+                    </a>
+                    <div class="ui icon red button">
+                        <i class="alarm outline icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <!-- <div class="ui button"> -->
+                <a class="ui red button circular" routerLink="/enter/l" style="background-color: #f55c4d !important;">Se
+                    deconnecter</a>
+                <!-- <a class="ui primary button circular" style="background-color: #4d92f5 !important; border-radius: 0px 18px 18px 0px !important;" routerLink="/enter/r">S'inscrire</a> -->
+                <!-- </div> -->
             </div>
         </div>
-      </div>
-        <div class="item">
-            <!-- <div class="ui button"> -->
-            <a class="ui red button circular" routerLink="/enter/l" style="background-color: #f55c4d !important;">Se deconnecter</a>
-            <!-- <a class="ui primary button circular" style="background-color: #4d92f5 !important; border-radius: 0px 18px 18px 0px !important;" routerLink="/enter/r">S'inscrire</a> -->
-            <!-- </div> -->
-        </div>
     </div>
-  </div>
 </div>
 
 <div class="ui large secondary menu" *ngIf="logging.isLogin()">
@@ -39,113 +38,115 @@
 
 <!-- Modal -->
 <ng-template let-popup #popupTemplate>
-<div class="ui feed" style="font-size: 85%; max-height: 400px; width:300px; overflow: scroll;">
-    <div class="event">
-        <div class="label">
-            <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
-        </div>
-        <div class="content">
-            <div class="summary">
-                <a class="user">
-                    Elliot Fu
-                </a> added you as a friend
-                <div class="date">
-                    1 Hour Ago
+    <div class="ui feed" style="font-size: 85%; max-height: 400px; width:300px; overflow: scroll;">
+        <div class="event">
+            <div class="label">
+                <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
+            </div>
+            <div class="content">
+                <div class="summary">
+                    <a class="user">
+                        Elliot Fu
+                    </a> added you as a friend
+                    <div class="date">
+                        1 Hour Ago
+                    </div>
+                </div>
+                <div class="meta">
+                    <a class="like">
+                        <i class="like icon"></i> 4 Likes
+                    </a>
                 </div>
             </div>
-            <div class="meta">
-                <a class="like">
-                    <i class="like icon"></i> 4 Likes
-                </a>
+        </div>
+        <div class="event">
+            <div class="label">
+                <img src="https://semantic-ui.com/images/avatar/small/helen.jpg">
+            </div>
+            <div class="content">
+                <div class="summary">
+                    <a>Helen Troy</a> added <a>2 new illustrations</a>
+                    <div class="date">
+                        4 days ago
+                    </div>
+                </div>
+                <div class="extra images">
+                    <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
+                    <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
+                </div>
+                <div class="meta">
+                    <a class="like">
+                        <i class="like icon"></i> 1 Like
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="event">
+            <div class="label">
+                <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg">
+            </div>
+            <div class="content">
+                <div class="summary">
+                    <a class="user">
+                        Jenny Hess
+                    </a> added you as a friend
+                    <div class="date">
+                        2 Days Ago
+                    </div>
+                </div>
+                <div class="meta">
+                    <a class="like">
+                        <i class="like icon"></i> 8 Likes
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="event">
+            <div class="label">
+                <img src="https://semantic-ui.com/images/avatar/small/joe.jpg">
+            </div>
+            <div class="content">
+                <div class="summary">
+                    <a>Joe Henderson</a> posted on his page
+                    <div class="date">
+                        3 days ago
+                    </div>
+                </div>
+                <div class="extra text">
+                    Ours is a life of constant reruns. We're always circling back to where we'd we started, then
+                    starting all over again. Even if we don't run extra laps that day, we surely will come back for more
+                    of the same another day soon.
+                </div>
+                <div class="meta">
+                    <a class="like">
+                        <i class="like icon"></i> 5 Likes
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="event">
+            <div class="label">
+                <img src="https://semantic-ui.com/images/avatar/small/justen.jpg">
+            </div>
+            <div class="content">
+                <div class="summary">
+                    <a>Justen Kitsune</a> added <a>2 new photos</a> of you
+                    <div class="date">
+                        4 days ago
+                    </div>
+                </div>
+                <div class="extra images">
+                    <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
+                    <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
+                </div>
+                <div class="meta">
+                    <a class="like">
+                        <i class="like icon"></i> 41 Likes
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="event">
-        <div class="label">
-            <img src="https://semantic-ui.com/images/avatar/small/helen.jpg">
-        </div>
-        <div class="content">
-            <div class="summary">
-                <a>Helen Troy</a> added <a>2 new illustrations</a>
-                <div class="date">
-                    4 days ago
-                </div>
-            </div>
-            <div class="extra images">
-                <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
-                <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
-            </div>
-            <div class="meta">
-                <a class="like">
-                    <i class="like icon"></i> 1 Like
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="event">
-        <div class="label">
-            <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg">
-        </div>
-        <div class="content">
-            <div class="summary">
-                <a class="user">
-                    Jenny Hess
-                </a> added you as a friend
-                <div class="date">
-                    2 Days Ago
-                </div>
-            </div>
-            <div class="meta">
-                <a class="like">
-                    <i class="like icon"></i> 8 Likes
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="event">
-        <div class="label">
-            <img src="https://semantic-ui.com/images/avatar/small/joe.jpg">
-        </div>
-        <div class="content">
-            <div class="summary">
-                <a>Joe Henderson</a> posted on his page
-                <div class="date">
-                    3 days ago
-                </div>
-            </div>
-            <div class="extra text">
-                Ours is a life of constant reruns. We're always circling back to where we'd we started, then starting all over again. Even if we don't run extra laps that day, we surely will come back for more of the same another day soon.
-            </div>
-            <div class="meta">
-                <a class="like">
-                    <i class="like icon"></i> 5 Likes
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="event">
-        <div class="label">
-            <img src="https://semantic-ui.com/images/avatar/small/justen.jpg">
-        </div>
-        <div class="content">
-            <div class="summary">
-                <a>Justen Kitsune</a> added <a>2 new photos</a> of you
-                <div class="date">
-                    4 days ago
-                </div>
-            </div>
-            <div class="extra images">
-                <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
-                <a><img src="https://semantic-ui.com/images/wireframe/image.png"></a>
-            </div>
-            <div class="meta">
-                <a class="like">
-                    <i class="like icon"></i> 41 Likes
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 </ng-template>
 <!-- end modal-->
 <script type="text/javascript" script-name="raleway" src="http://use.edgefonts.net/raleway.js"></script>

@@ -3,7 +3,6 @@
         <a style="font-size: 130%;" routerLink="/manager/traveller/dashboard" class="item active" data-tab="first">Dashboard</a>
         <a style="font-size: 130%;" routerLink="/manager/traveller/trip" class="item" data-tab="second">Voyages</a>
         <a style="font-size: 130%;" routerLink="/manager/traveller/offer" class="item" data-tab="third">Offres</a>
-        <a style="font-size: 130%;" routerLink="/manager/traveller" class="item" data-tab="fourth">Friends</a>
     </div>
     <div class="ui hidden divider"></div>
     <div class="ui hidden divider"></div>
@@ -42,9 +41,9 @@
                     <div class="ui segment" suiTabContent="1" style="margin-bottom: 0px;">
                         <div class="ui relaxed divided list">
                             <div class="item" *ngFor="let msg of recieved">
-                                <i class="large mail middle aligned icon"></i>
+                                <i class="mail middle aligned icon"></i>
                                 <div class="content">
-                                    <a class="header">{{msg.sender}}</a>
+                                    <a class="header">{{msg.sender}} - {{msg.title}}</a>
                                     <div class="description">10 min</div>
                                 </div>
                             </div>
@@ -62,7 +61,7 @@
                             <div class="item" *ngFor="let msg of sent">
                                 <i class="large mail middle aligned icon"></i>
                                 <div class="content">
-                                    <a class="header">{{msg.recipient}}</a>
+                                    <a class="header">{{msg.recipient}} - {{msg.title}}</a>
                                     <div class="description">10 min</div>
                                 </div>
                             </div>
