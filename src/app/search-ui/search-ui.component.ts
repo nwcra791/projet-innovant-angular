@@ -36,7 +36,7 @@ export class SearchUiComponent implements OnInit {
             item: `<div class="ui items">
             <div class="item" style="margin-bottom: 15px">
               <div class="ui small image">
-                    <img src={{img_ulr}} style="width: 500px">
+                    <img src={{img_url}} style="width: 500px">
               </div>
               <div class="content">
                 <div class="header">{{{_highlightResult.name.value}}}</div>

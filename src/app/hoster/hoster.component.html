@@ -1,132 +1,136 @@
 <style>
-  .card
-  {
-    margin-left: 22% !important;
-    margin-right: 22% !important;
-  }
+    .card {
+        margin-left: 22% !important;
+        margin-right: 22% !important;
+    }
 
-  .field {
-    margin-right: 6px !important;
-    width: auto !important;
-  }
+    .field {
+        margin-right: 6px !important;
+        width: auto !important;
+    }
 
-  .row {
-    margin-bottom: 0px;
-    margin-top: 6px;
+    .row {
+        margin-bottom: 0px;
+        margin-top: 6px;
 
-  }
+    }
 
-  .blue.segment {
-    background-color: white !important;
-  }
+    .blue.segment {
+        background-color: white !important;
+    }
 </style>
+
 <div class="ui grid container">
-  <div class="one column row">
-    <div class="column">
-      <div class="ui blue segment" style="padding-bottom: 40px">
-      <h1 class="ui header center">Devenez hôte et recevez une aide précieuse</h1>
+    <div class="one column row">
+        <div class="column">
+            <div class="ui blue segment" style="padding-bottom: 40px">
+                <h1 class="ui header center">Devenez hôte et recevez une aide précieuse</h1>
+                <div class="ui form">
+                    <div class="ui grid container" style="margin-bottom: 20px !important">
+                        <div class="one column row">
+                            <div class="seven wide column">
+                                <div class="ui field">
+                                    <label>Titre de votre annonce</label>
+                                    <input [(ngModel)]="title" type="text" placeholder="Ex: Recherche baybysitter"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four column row">
+                            <div class="seven wide column">
+                                <div class="ui field">
+                                    <label>Adresse du logement</label>
+                                    <input [(ngModel)]="adress" type="text" placeholder="Ex: 10 rue du machin ..."
+                                           required>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui field">
+                                    <label>Ville</label>
+                                    <input [(ngModel)]="city" type="text" placeholder="Ex: Paris" required>
+                                </div>
+                            </div>
+                            <div class="two wide column">
+                                <div class="ui field">
+                                    <label>Code postal</label>
+                                    <input [(ngModel)]="zipcode" type="text" placeholder="Ex: 75000" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four column row">
+                            <div class="seven wide column">
+                                <div class="ui field">
+                                    <label>Domaine du service</label>
+                                    <input [(ngModel)]="domaine" type="text" placeholder="Ex : Jardinage" required>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui field">
+                                    <label>Cpacité d'accueil</label>
+                                    <input [(ngModel)]="nb_seat" type="text" placeholder="Ville" required>
+                                </div>
+                            </div>
+                            <!--<div class="two wide column">
+                                <div class="ui field">
+                                    <label></label>
+                                    <input [(ngModel)]="zipcode" type="text" placeholder="code postale" required>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
 
-      <div class="ui form">
-
-        <div class="ui grid container" style="margin-bottom: 20px !important">
-          <div class="one column row">
-            <div class="seven wide column">
-              <div class="ui field">
-                <label>Titre de votre annonce</label>
-                <input [(ngModel)]="title" type="text" placeholder="Titre de votre annonce" required>
-              </div>
-            </div>
-          </div>
-          <div class="four column row">
-            <div class="six wide column">
-              <div class="ui field">
-                <label>Adresse du logement</label>
-                <input [(ngModel)]="adress" type="text" placeholder="Adresse" required>
-              </div>
-            </div>
-            <div class="four wide column">
-              <div class="ui field">
-                <label>Ville</label>
-                <input [(ngModel)]="city" type="text" placeholder="Ville" required>
-              </div>
-            </div>
-            <div class="four wide column">
-
-            </div>
-            <div class="two wide column">
-              <div class="ui field">
-                <label>Code postal</label>
-                <input [(ngModel)]="zipcode" type="text" placeholder="code postale" required>
-              </div>
-            </div>
-          </div>
-          <div class="three column row">
-            <div class="height wide column">
-              <div class="ui field">
-                <input type="text" placeholder="8 Wide">
-              </div>
-            </div>
-            <div class="six wide column">
-              <div class="ui field">
-                <input type="text" placeholder="8 Wide">
-              </div>
-            </div>
-            <div class="two wide column">
-              <div class="ui field">
-                <input type="text" placeholder="8 Wide">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <span class="label">
+                    <span class="label">
           Entrez les détails de votre offre :
         </span>
-        <textarea [(ngModel)]="details" type="text" style="width: 100% !important"></textarea>
-
-
-        <div class="row">
+                    <textarea [(ngModel)]="details" type="text" style="width: 100% !important"></textarea>
+                    <div class="row">
         <span class="label">
            Cliquez sur les images pour enregistrer vos photos :
         </span><br>
-        <div>
-          <div id="img1" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
-          <div id="img2" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
-          <div id="img3" style="float: left; margin: 10px;"><app-upload-form></app-upload-form></div>
-          <br>
-        </div>
-        </div>
-        <br><br>
-        <div class="ui checkbox">
-          <input type="checkbox" name="example">
-          <label>Je certifie avoir pris connaissance des <a style="color: green !important;">conditions générales</a> et les avoir aceptées</label>
-        </div>
-        <div (click)="onClickAddOffer()" class="ui right floated positive button">Enregistrer l'offre</div>
-      </div>
-      </div>
-  </div>
-  </div>
-  <div class="one column row">
-    <div class="column">
-    <div class="ui segment">
-    <h1 class="ui header">Listes de vos adresses</h1>
-      <div class="ui one cards">
-          <div class="card">
-            <div class="content">
-              <div class="header">
-                Titre de l'offre
-              </div>
-              <div class="meta">
-                Nom de l'utilisateur / utilisatrice
-              </div>
-              <div class="description">
-                Contenu de l'offre
-              </div>
+                        <div>
+                            <div id="img1" style="float: left; margin: 10px;">
+                                <app-upload-form></app-upload-form>
+                            </div>
+                            <div id="img2" style="float: left; margin: 10px;">
+                                <app-upload-form></app-upload-form>
+                            </div>
+                            <div id="img3" style="float: left; margin: 10px;">
+                                <app-upload-form></app-upload-form>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="example">
+                        <label>Je certifie avoir pris connaissance des <a style="color: green !important;">conditions
+                            générales</a> et les avoir aceptées</label>
+                    </div>
+                    <div (click)="onClickAddOffer()" class="ui right floated positive button">Enregistrer l'offre</div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="one column row">
+        <div class="column">
+            <div class="ui segment">
+                <h1 class="ui header">Listes de vos adresses</h1>
+                <div class="ui one cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">
+                                Titre de l'offre
+                            </div>
+                            <div class="meta">
+                                Nom de l'utilisateur / utilisatrice
+                            </div>
+                            <div class="description">
+                                Contenu de l'offre
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

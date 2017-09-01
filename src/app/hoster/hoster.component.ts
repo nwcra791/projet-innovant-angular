@@ -1,44 +1,57 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
+import {HttpService} from "../services/http.service";
 
 @Component({
-  selector: 'app-hoster',
-  templateUrl: './hoster.component.html',
-  styleUrls: ['./hoster.component.css']
+    selector: 'app-hoster',
+    templateUrl: './hoster.component.html',
+    styleUrls: ['./hoster.component.css']
 })
 export class HosterComponent implements OnInit {
-  private http: HttpClient;
-  private title: any = "";
-  private userName: any = "";
-  private details: any = "";
+    private http: HttpService;
+    private title: any = "";
+    private userName: any = "";
+    private details: any = "";
+    private adress: any = "";
+    private zipcode: any = "";
+    private city: any = "";
+    private domaine: any = "";
+    private nb_seat: any = "";
 
-  constructor(http: HttpClient) {
-    this.http = http
-  }
+
+    constructor(http: HttpService) {
+        this.http = http;
+    }
 
     onClickAddOffer() {
-   console.info(this.title);
-   console.info(this.userName);
-   console.info(this.details);
+        console.info(this.title);
+        //console.info(this.userName);
+        console.info(this.details);
+        console.info(this.adress);
+        console.info(this.zipcode);
+        console.info(this.domaine);
 
-      let headers = new Headers({
-          'Content-Type' : 'application/json'
-      });
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
 
-      this.http.post("http://92.222.86.149:443/offers",{
-          "author": this.userName,
-          "title": this.title,
-          "content": this.details
-      }, headers)
-          .subscribe(
-              res => {
-                  console.log(res);
-              }
+        this.http.authPost('offers', JSON.stringify({
+            "author": "clem_test",
+            "title": this.title,
+            "adress": this.adress,
+            "zip_code": this.zipcode,
+            "city": this.city,
+            "domaine": this.domaine,
+            "nb_seat": this.nb_seat,
+            "img_url": "https://firebasestorage.googleapis.com/v0/b/projet-inno-storage.appspot.com/o/profile-img%2Fflorac.jpg?alt=media&token=e044d040-2744-44bb-aa40-c10e5c0e015b",
+            "content": this.details
+        })).subscribe(
+            res => {
+                console.log(res);
+            }
+        )
+    }
 
-          )
-  }
-
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
