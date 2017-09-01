@@ -5,12 +5,15 @@
     margin-right: 22% !important;
   }
 
-  input[type="text"] {
-    float:none !important;
-    padding: 4px !important;
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-    width: 83% !important;
+  .field {
+    margin-right: 6px !important;
+    width: auto !important;
+  }
+
+  .row {
+    margin-bottom: 0px;
+    margin-top: 6px;
+
   }
 
   .blue.segment {
@@ -22,46 +25,67 @@
     <div class="column">
       <div class="ui blue segment" style="padding-bottom: 40px">
       <h1 class="ui header center">Devenez hôte et recevez une aide précieuse</h1>
+
       <div class="ui form">
-        <div class="fields">
-          <div class="seven wide field">
-            <label>Titre de votre annonce</label>
-            <input [(ngModel)]="title" type="text" placeholder="Titre de votre annonce" required>
+
+        <div class="ui grid container" style="margin-bottom: 20px !important">
+          <div class="one column row">
+            <div class="seven wide column">
+              <div class="ui field">
+                <label>Titre de votre annonce</label>
+                <input [(ngModel)]="title" type="text" placeholder="Titre de votre annonce" required>
+              </div>
+            </div>
+          </div>
+          <div class="four column row">
+            <div class="six wide column">
+              <div class="ui field">
+                <label>Adresse du logement</label>
+                <input [(ngModel)]="adress" type="text" placeholder="Adresse" required>
+              </div>
+            </div>
+            <div class="four wide column">
+              <div class="ui field">
+                <label>Ville</label>
+                <input [(ngModel)]="city" type="text" placeholder="Ville" required>
+              </div>
+            </div>
+            <div class="four wide column">
+
+            </div>
+            <div class="two wide column">
+              <div class="ui field">
+                <label>Code postal</label>
+                <input [(ngModel)]="zipcode" type="text" placeholder="code postale" required>
+              </div>
+            </div>
+          </div>
+          <div class="three column row">
+            <div class="height wide column">
+              <div class="ui field">
+                <input type="text" placeholder="8 Wide">
+              </div>
+            </div>
+            <div class="six wide column">
+              <div class="ui field">
+                <input type="text" placeholder="8 Wide">
+              </div>
+            </div>
+            <div class="two wide column">
+              <div class="ui field">
+                <input type="text" placeholder="8 Wide">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="fields">
-          <div class="six wide field">
-            <label>Adresse du logement</label>
-            <input [(ngModel)]="adress" type="text" placeholder="Adresse" required>
-          </div>
-          <div class="four wide field" style="margin-left: 20px !important;">
-          </div>
-          <div class="four wide field" style="margin-left: 20px !important;">
-            <label>Ville</label>
-            <input [(ngModel)]="city" type="text" placeholder="Ville" required>
-          </div>
-          <div class="two wide field" style="margin-left: 20px !important;">
-            <label>Code postale</label>
-            <input [(ngModel)]="zipcode" type="text" placeholder="code postale" required>
-          </div>
-        </div>
-        <div class="fields">
-          <div class="eight wide field" style="float:none !important">
-            <input type="text" placeholder="8 Wide">
-          </div>
-          <div class="six wide field" style="float:none !important">
-            <input type="text" placeholder="6 Wide">
-          </div>
-          <div class="two wide field" style="float:none !important">
-            <input type="text" placeholder="2 Wide">
-          </div>
-        </div>
-        <div class="sixteen wide field">
-          <span class="label">
-            Entrez les détails de votre offre :
-          </span>
-          <textarea [(ngModel)]="details" type="text"></textarea>
-        </div>
+
+
+        <span class="label">
+          Entrez les détails de votre offre :
+        </span>
+        <textarea [(ngModel)]="details" type="text" style="width: 100% !important"></textarea>
+
+
         <div class="row">
         <span class="label">
            Cliquez sur les images pour enregistrer vos photos :
