@@ -50,7 +50,5 @@ export class TravellerComponent implements OnInit {
                this.recieved.push(msg);
            }
        }
-       this.sent.reverse();
-       this.recieved.reverse();
    }
 }
