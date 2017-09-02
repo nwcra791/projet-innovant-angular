@@ -31,6 +31,10 @@
             </div>
         </div>
         <div class="column">
+            <div class="ui segments">
+            <div class="ui segment">
+                <b>Messages récents</b>
+            </div>
             <div class="ui segment">
                 <sui-tabset>
                     <div class="ui pointing secondary menu">
@@ -43,7 +47,7 @@
                             <div class="item" *ngFor="let msg of recieved">
                                 <i class="large mail middle aligned icon"></i>
                                 <div class="content">
-                                    <a class="header">{{msg.sender}} - {{msg.title}}</a>
+                                    <a class="header" [routerLink]="['/manager/mail', msg.uuid]">{{msg.sender}} - {{msg.title}}</a>
                                     <div class="description">10 min</div>
                                 </div>
                             </div>
@@ -74,6 +78,7 @@
                         </div>
                     </div>
                 </sui-tabset>
+            </div>
             </div>
             <!--<div class="ui segments">-->
                 <!--<div class="ui segment">-->

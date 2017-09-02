@@ -38,10 +38,10 @@ export class MenuComputerComponent implements OnInit {
             const dmy = date[0].split('/');
             const hm = date[1].split(':');
             event.date = new Date(20 + dmy[2], dmy[1] - 1, dmy[0], hm[0], hm[1]);
-            console.log('year = ' + (20 + dmy[2]));
-            console.log('month = ' + dmy[1]);
-            console.log('day = ' + dmy[0]);
-            console.log(event.date);
+            // console.log('year = ' + (20 + dmy[2]));
+            // console.log('month = ' + dmy[1]);
+            // console.log('day = ' + dmy[0]);
+            // console.log(event.date);
             this.events.push(event);
         }
     }

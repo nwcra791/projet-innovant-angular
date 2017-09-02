@@ -35,6 +35,7 @@ import {UploadService} from './uploads/shared/upload.service';
 import {UploadFormComponent} from './uploads/upload-form/upload-form.component';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
+import { MailComponent } from './mail/mail.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -57,7 +58,8 @@ export const firebaseConfig = environment.firebase;
         ToolbarComponent,
         UploadFormComponent,
         SearchUiComponent,
-        TravellerComponent
+        TravellerComponent,
+        MailComponent
     ],
     imports: [
         MaterializeModule,
