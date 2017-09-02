@@ -1,9 +1,10 @@
 <div class="ui container">
-    <div class="ui pointing secondary menu">
-                <a class="item active" data-tab="first">First</a>
-                <a class="item" data-tab="second">Second</a>
-                <a class="item" data-tab="third">Third</a>
-            </div>
+    <!-- If not on specific mail, display all -->
+    <div *ngIf="!selected">
+        <div class="ui pointing secondary menu">
+            <a class="item active" data-tab="first">Recus</a>
+            <a class="item" data-tab="second">Envoyés</a>
+        </div>
         <table class="ui very basic table">
             <tr>
                 <td>John</td>
@@ -22,5 +23,48 @@
             </tr>
             </tbody>
         </table>
-    <!--</div>-->
+    </div>
+    <!-- If selected mail, display it -->
+    <div *ngIf="selected">
+        <div class="ui horizontal list">
+            <div class="item">
+                <div class="ui icon buttons">
+                    <button class="ui button" routerLink="/manager/mail">
+                        <!-- suiPopup popupInverted popupText="Retour" popupPlacement="bottom" ?? -->
+                        <i class="large long arrow left icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui icon buttons">
+                    <button class="ui button"><i class="large archive icon"></i></button>
+                    <button class="ui button"><i class="large exchange icon"></i></button>
+                    <button class="ui button"><i class="large trash icon"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <h5>{{mail.title}}</h5>
+        <div class="ui divider"></div>
+        <div class="ui items">
+            <div class="item">
+                <div class="ui tiny image">
+                    <img src="https://semantic-ui.com/images/avatar/large/stevie.jpg">
+                </div>
+                <div class="content" style="margin-top: 8px;">
+                    <p class="header">User name</p> <{{mail.sender}}>
+                    <div class="description">
+                        <p>À {{mail.recipient}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            {{mail.content}}
+        </p>
+        <br>
+        <div class="ui divider"></div>
+
+    </div>
 </div>
