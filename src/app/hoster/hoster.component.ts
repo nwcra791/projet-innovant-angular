@@ -57,7 +57,9 @@ export class HosterComponent implements OnInit {
             "city": this.city,
             "domaine": this.domaine,
             "nb_seat": this.nb_seat,
-            "img_url": "https://firebasestorage.googleapis.com/v0/b/projet-inno-storage.appspot.com/o/profile-img%2Fflorac.jpg?alt=media&token=e044d040-2744-44bb-aa40-c10e5c0e015b",
+            "img_url": this.img_url,
+            "img_url2": this.img_url2,
+            "img_url3": this.img_url3,
             "content": this.details
         })).subscribe(
             res => {
