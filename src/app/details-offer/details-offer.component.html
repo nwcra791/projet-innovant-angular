@@ -1,0 +1,46 @@
+<H1>
+  {{offer_Object.title}}
+</H1>
+<div class="ui image" style="max-width: 20%">
+  <img class="ui rounded fluid image" src="{{offer_Object.img_url}}">
+</div>
+<br>
+<br>
+<div class="ui small images">
+  <img class="ui rounded fluid image" src="{{offer_Object.img_url}}">
+  <img class="ui rounded fluid image" src="{{offer_Object.img_url2}}">
+  <img class="ui rounded fluid image" src="{{offer_Object.img_url3}}">
+</div>
+
+<table class="ui table">
+  <thead>
+  <tr><th class="six wide">Détails</th>
+    <th class="six wide">Valeur</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <td>Ville</td>
+    <td>{{offer_Object.city}}</td>
+  </tr>
+  <tr>
+    <td>Code postal</td>
+    <td>{{offer_Object.zip_code}}</td>
+  </tr>
+  <tr>
+    <td>Domaine du service</td>
+    <td>{{offer_Object.domaine}}</td>
+  </tr>
+  <tr>
+    <td>Capacité d'accueil</td>
+    <td>{{offer_Object.nb_seat}}</td>
+  </tr>
+  <tr>
+    <td>Date de publication</td>
+    <td>{{offer_Object.publication_date}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr><th>footer</th>
+    <th>footer</th>
+  </tr></tfoot>
+</table>

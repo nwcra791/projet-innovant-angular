@@ -15,6 +15,7 @@ import { HosterComponent } from './hoster/hoster.component';
 // import { TravellerComponent } from './traveller/traveller.component';
 import { TravellerTripComponent } from './traveller/traveller-trip/traveller-trip.component';
 import { TravellerOfferComponent } from './traveller/traveller-offer/traveller-offer.component';
+import { DetailsOfferComponent } from './details-offer/details-offer.component';
 
 
 const appRoutes: Routes = [
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
       { path: '', redirectTo: 'offer', pathMatch: 'full'},
       { path: 'trip', component: TravellerTripComponent },
       { path: 'offer', component: TravellerOfferComponent },
+      {path: 'offer/:id', component: DetailsOfferComponent},
     ]},
     { path: '**', component: PageNotFoundComponent }
   ]},
