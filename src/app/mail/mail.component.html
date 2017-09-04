@@ -1,70 +1,151 @@
-<div class="ui container">
-    <!-- If not on specific mail, display all -->
-    <div *ngIf="!selected">
-        <div class="ui pointing secondary menu">
-            <a class="item active" data-tab="first">Recus</a>
-            <a class="item" data-tab="second">Envoyés</a>
-        </div>
-        <table class="ui very basic table">
-            <tr>
-                <td>John</td>
-                <td>Approved</td>
-                <td>None</td>
-            </tr>
-            <tr>
-                <td>Jamie</td>
-                <td>Approved</td>
-                <td>Requires call</td>
-            </tr>
-            <tr>
-                <td>Jill</td>
-                <td>Denied</td>
-                <td>None</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- If selected mail, display it -->
-    <div *ngIf="selected">
-        <div class="ui horizontal list">
+<style>
+    .ui.modal {
+        border-radius: 0px !important;
+        font-size: 1rem;
+    }
+</style>
+<div class="ui divider" style="margin-bottom: 0px; border-bottom-width: 0px;"></div>
+<div class="ui grid">
+    <div class="three wide column">
+        <div class="ui middle aligned selection list" style="margin-left: 20px;">
             <div class="item">
-                <div class="ui icon buttons">
-                    <button class="ui button" routerLink="/manager/mail">
-                        <!-- suiPopup popupInverted popupText="Retour" popupPlacement="bottom" ?? -->
-                        <i class="large long arrow left icon"></i>
-                    </button>
+                <div class="content">
+                    <button class="ui red button" (click)="open('lol')">Nouveau message</button>
+                </div>
+            </div>
+            <div class="item" routerLink='/manager/mail'>
+                <div class="content">
+                    <div class="header red-text">Boîte de réception</div>
                 </div>
             </div>
             <div class="item">
-                <div class="ui icon buttons">
-                    <button class="ui button"><i class="large archive icon"></i></button>
-                    <button class="ui button"><i class="large exchange icon"></i></button>
-                    <button class="ui button"><i class="large trash icon"></i></button>
+                <div class="content">
+                    <div class="header">Messages envoyés</div>
                 </div>
             </div>
-        </div>
-        <div class="ui divider"></div>
-        <h5>{{mail.title}}</h5>
-        <div class="ui divider"></div>
-        <div class="ui items">
+            <div class="ui divider" style="margin-bottom: 5px; border-bottom-width: 0px;"></div>
             <div class="item">
-                <div class="ui tiny image">
-                    <img src="https://semantic-ui.com/images/avatar/large/stevie.jpg">
+                <div class="content">
+                    <div class="header">Contacts</div>
                 </div>
-                <div class="content" style="margin-top: 8px;">
-                    <p class="header">User name</p> <{{mail.sender}}>
+            </div>
+            <div class="ui divider" style="margin-bottom: 5px;margin-top: 5px; border-bottom-width: 0px;"></div>
+            <div class="item">
+                <div class="ui mini circular image">
+                    <img src="https://semantic-ui.com/images/avatar/small/stevie.jpg">
+                </div>
+                <div class="content">
+                    <div class="header">Steavie</div>
+                    <div class="meta">
+                        <span class="stay">20 min</span>
+                    </div>
                     <div class="description">
-                        <p>À {{mail.recipient}}</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui mini circular image">
+                    <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg">
+                </div>
+                <div class="content">
+                    <div class="header">Jenny</div>
+                    <div class="meta">
+                        <span class="stay">1 heure</span>
+                    </div>
+                    <div class="description">
+                        <p></p>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <p>
-            {{mail.content}}
-        </p>
-        <br>
-        <div class="ui divider"></div>
+    </div>
+    <div class="eleven wide column">
+        <!-- If not on specific mail, display all -->
+        <div *ngIf="!selected">
+            <table class="ui very basic selectable table"
+                   style="table-layout: fixed; border-collapse: collapse; width: 100%;">
+                <tbody>
+                <tr *ngFor="let mail of mails" style="cursor: pointer;" [routerLink]="['/manager/mail', mail.uuid]">
+                    <td style="width: 250px;"><i class="minus square outline icon" style="margin-right: 35px;"></i>{{mail.sender}}
+                    </td>
+                    <td>{{mail.title}}</td>
+                    <td>{{mail.date | amTimeAgo}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
+
+        <!-- If selected mail, display it -->
+        <div *ngIf="selected">
+            <div class="ui horizontal list">
+                <div class="item">
+                    <div class="ui icon buttons">
+                        <button class="ui button" routerLink="/manager/mail">
+                            <!-- suiPopup popupInverted popupText="Retour" popupPlacement="bottom" ?? -->
+                            <i class="large long arrow left icon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui icon buttons">
+                        <button class="ui button"><i class="large archive icon"></i></button>
+                        <button class="ui button"><i class="large exchange icon"></i></button>
+                        <button class="ui button"><i class="large trash icon"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <h5>{{mail.title}}</h5>
+            <div class="ui divider"></div>
+            <div class="ui items">
+                <div class="item">
+                    <div class="ui tiny image">
+                        <img src="https://semantic-ui.com/images/avatar/large/stevie.jpg">
+                    </div>
+                    <div class="content" style="margin-top: 8px;">
+                        <p class="header">Sender name</p> <{{mail.sender}}>
+                        <div class="float right">{{mail.date | amTimeAgo}}</div>
+                        <div class="description">
+                            <p>À {{mail.recipient}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p>
+                {{mail.content}}
+            </p>
+            <br>
+            <div class="ui divider"></div>
+            <div class="ui form">
+                <div class="field">
+                    <textarea placeholder="Cliquez ici pour répondre au message"></textarea>
+                </div>
+                <button class="ui blue button">Envoyer</button>
+            </div>
+        </div>
     </div>
 </div>
+
+<ng-template let-context let-modal="modal" #modalTemplate>
+    <div class="ui inverted segment" style="margin-top: 0px;">
+        <p>Nouveau message</p>
+    </div>
+    <div class="ui divider"></div>
+    <div class="content">
+        <div class="inline fields">
+            <div class="field">
+                <label>À </label>
+                <div class="ui fluid transparent input">
+                    <input type="text" placeholder="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+        <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+    </div>
+</ng-template>

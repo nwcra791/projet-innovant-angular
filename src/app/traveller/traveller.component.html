@@ -52,13 +52,13 @@
                                 <i class="large mail middle aligned icon"></i>
                                 <div class="content">
                                     <a class="header" [routerLink]="['/manager/mail', msg.uuid]">{{msg.sender}} - {{msg.title}}</a>
-                                    <div class="description">10 min</div>
+                                    <div class="description">{{msg.date | amTimeAgo }}</div>
                                 </div>
                             </div>
                             <div class="item" *ngIf="recieved.length < 1">
                                 <i class="large inbox middle aligned icon"></i>
                                 <div class="content" style="padding-top:3px;">
-                                    <a class="header">Aucun messages</a>
+                                    <a class="header">Aucun message</a>
                                 </div>
                             </div>
                         </div>
@@ -69,14 +69,14 @@
                             <div class="item" *ngFor="let msg of sent">
                                 <i class="large mail middle aligned icon"></i>
                                 <div class="content">
-                                    <a class="header">{{msg.recipient}} - {{msg.title}}</a>
+                                    <a class="header" [routerLink]="['/manager/mail', msg.uuid]">{{msg.recipient}} - {{msg.title}}</a>
                                     <div class="description">10 min</div>
                                 </div>
                             </div>
                             <div class="item" *ngIf="sent.length < 1">
                                 <i class="large inbox middle aligned icon"></i>
                                 <div class="content" style="padding-top:3px;">
-                                    <a class="header">Aucun messages</a>
+                                    <a class="header">Aucun message</a>
                                 </div>
                             </div>
                         </div>

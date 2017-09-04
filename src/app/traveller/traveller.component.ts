@@ -27,21 +27,29 @@ export class TravellerComponent implements OnInit {
   }
 
   ngOnInit() {
-      console.dir('traveller');
+      console.log('traveller');
       this.http.get('trips').subscribe(
           res => {
-              console.dir(res.json());
+              if (res.status === 401) {
+                  this.logging.invalidateSession();
+              }
               this.voyages = res.json();
           });
       this.http.get('messages').subscribe(
           res => {
-              console.dir(res.json());
+              if (res.status === 401) {
+                  this.logging.invalidateSession();
+              }
               this.setupMessages(res.json());
           });
   }
 
    setupMessages(messages: any) {
        for (const msg of messages) {
+           const date = msg.date.split(' ');
+           const dmy = date[0].split('/');
+           const hm = date[1].split(':');
+           msg.date = new Date(20 + dmy[2], dmy[1] - 1, dmy[0], hm[0], hm[1]);
            msg.sender = msg.sender.toLowerCase();
            msg.recipient = msg.recipient.toLowerCase();
            if (msg.sender === this.logging.getMail()) {

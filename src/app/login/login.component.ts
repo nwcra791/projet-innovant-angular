@@ -26,16 +26,13 @@ export class LoginComponent implements OnInit {
   }
 
   onClickLogin() {
-
     this.http.post('connect', JSON.stringify({
       'email': this.email,
       'password': this.passwd
     })).subscribe(
       res => {
-        //this.logging.login()
         this.logging.setSecret(res.json()['session-id']);
         this.logging.setConnInfos(res.json()['User']);
-        this.http.setSecret(this.logging.getSecret());
         this.router.navigate(['/start']);
       });
     }

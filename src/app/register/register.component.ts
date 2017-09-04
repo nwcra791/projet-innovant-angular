@@ -34,11 +34,8 @@ export class RegisterComponent implements OnInit {
       }))
           .subscribe(
               res => {
-                  //console.log(res)
-                  //this.logging.login()
                   this.logging.setSecret(res.json()['session-id']);
                   this.logging.setConnInfos(res.json()['User']);
-                  this.http.setSecret(this.logging.getSecret());
                   this.router.navigate(['/start']);
               }
 

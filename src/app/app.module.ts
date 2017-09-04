@@ -36,6 +36,7 @@ import {UploadFormComponent} from './uploads/upload-form/upload-form.component';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import { MailComponent } from './mail/mail.component';
+import {ErrorInterceptor} from './services/Interceptor.service';
 
 export const firebaseConfig = environment.firebase;
 
@@ -79,6 +80,7 @@ export const firebaseConfig = environment.firebase;
     providers: [
         HttpService,
         LoggingService,
+        ErrorInterceptor,
         UploadService,
         AngularFireAuth,
         AngularFireDatabase
