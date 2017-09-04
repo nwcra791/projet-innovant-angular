@@ -1,7 +1,18 @@
 <style>
-    .ui.modal {
+    /deep/ .ui.modal {
         border-radius: 0px !important;
         font-size: 1rem;
+    }
+    /*/deep/ .ui.modal>.content {*/
+        /*padding: 0px !important;*/
+    /*}*/
+
+    /deep/ .ui.modal>.ui.divider {
+        margin: 0px !important;
+    }
+
+    /deep/ .ui.fluid.transparent input {
+        margin-bottom:0px;
     }
 </style>
 <div class="ui divider" style="margin-bottom: 0px; border-bottom-width: 0px;"></div>
@@ -130,18 +141,26 @@
 </div>
 
 <ng-template let-context let-modal="modal" #modalTemplate>
-    <div class="ui inverted segment" style="margin-top: 0px;">
+    <div class="ui inverted segment" style="margin-top: 0px; border-radius: 0px !important;">
         <p>Nouveau message</p>
     </div>
     <div class="ui divider"></div>
+        <div class="ui fluid transparent input">
+            <input type="text" placeholder="">
+        </div>
+    <div class="ui divider"></div>
     <div class="content">
-        <div class="inline fields">
-            <div class="field">
-                <label>À </label>
-                <div class="ui fluid transparent input">
-                    <input type="text" placeholder="">
-                </div>
+        <div class="field">
+            <div class="ui fluid transparent input">
+                <input type="text" placeholder="">
             </div>
+        </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="content">
+        <div class="ui form field">
+            <label>Short Text</label>
+            <textarea rows="6"></textarea>
         </div>
     </div>
     <div class="actions">
