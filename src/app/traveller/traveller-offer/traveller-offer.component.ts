@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import { HttpService } from "../../services/http.service";
-import { LoggingService } from "../../services/logging.service";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpService } from '../../services/http.service';
+import { LoggingService } from '../../services/logging.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SuiModule } from 'ng2-semantic-ui';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,5 +17,7 @@ export class TravellerOfferComponent implements OnInit {
   private http: HttpService;
   private logging: LoggingService;
 
-  ngOnInit() {}
+  ngOnInit() {
+      console.dir('offer');
+  }
 }

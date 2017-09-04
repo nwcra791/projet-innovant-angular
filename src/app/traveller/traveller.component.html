@@ -1,3 +1,195 @@
-<H1 style="text-align: center; margin-top: 15px;">
-  Trouver l'hôte de vos rêves !!
-</H1>
+<div class="ui container">
+    <div class="ui pointing secondary menu">
+        <a style="font-size: 130%;" routerLink="/manager/traveller/dashboard" class="item active" data-tab="first">Dashboard</a>
+        <a style="font-size: 130%;" routerLink="/manager/traveller/trip" class="item" data-tab="second">Voyages</a>
+        <a style="font-size: 130%;" routerLink="/manager/traveller/offer" class="item" data-tab="third">Offres</a>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui two column grid">
+        <div class="column">
+            <div class="ui segments"> <!--style="max-height: 400px; overflow: scroll;"-->
+                <div class="ui segment">
+                    <b>Vos voyages</b>
+                </div>
+                <div *ngFor="let voyage of voyages;let i = index" class="ui segment event"
+                     style="cursor: pointer;" onmouseover="this.style.background='#f9f9f9';"
+                     onmouseout="this.style.background='';"
+                     [routerLink]="['/manager/traveller/trip', i]">
+                    <p>{{voyage.name}}</p>
+                    <div class="meta">
+                        <a class="like">
+                            <i class="like icon"></i> 4 Likes
+                        </a>
+                    </div>
+                </div>
+                <div class="ui segment">
+                    <button class="ui blue icon button">
+                        <i class="plus icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segments">
+            <div class="ui segment">
+                <!--<button class="small ui right floated button">-->
+                <i class="large right external icon" style="cursor: pointer;" routerLink="/manager/mail"></i>
+                    <!--Mails-->
+                <!--</button>-->
+                <b>Messages récents</b>
+            </div>
+            <div class="ui segment">
+                <sui-tabset>
+                    <div class="ui pointing secondary menu">
+                        <a class="item" suiTabHeader="1">Boîte de réception</a>
+                        <a class="item" suiTabHeader="2">Messages envoyés</a>
+                    </div>
+                    <!-- messages received -->
+                    <div class="ui segment" suiTabContent="1" style="margin-bottom: 0px;">
+                        <div class="ui relaxed divided list">
+                            <div class="item" *ngFor="let msg of recieved">
+                                <i class="large mail middle aligned icon"></i>
+                                <div class="content">
+                                    <a class="header" [routerLink]="['/manager/mail', msg.uuid]">{{msg.sender}} - {{msg.title}}</a>
+                                    <div class="description">{{msg.date | amTimeAgo }}</div>
+                                </div>
+                            </div>
+                            <div class="item" *ngIf="recieved.length < 1">
+                                <i class="large inbox middle aligned icon"></i>
+                                <div class="content" style="padding-top:3px;">
+                                    <a class="header">Aucun message</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- messages sent -->
+                    <div class="ui segment" suiTabContent="2">
+                        <div class="ui relaxed divided list">
+                            <div class="item" *ngFor="let msg of sent">
+                                <i class="large mail middle aligned icon"></i>
+                                <div class="content">
+                                    <a class="header" [routerLink]="['/manager/mail', msg.uuid]">{{msg.recipient}} - {{msg.title}}</a>
+                                    <div class="description">10 min</div>
+                                </div>
+                            </div>
+                            <div class="item" *ngIf="sent.length < 1">
+                                <i class="large inbox middle aligned icon"></i>
+                                <div class="content" style="padding-top:3px;">
+                                    <a class="header">Aucun message</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sui-tabset>
+            </div>
+            </div>
+            <!--<div class="ui segments">-->
+                <!--<div class="ui segment">-->
+                    <!--<b>Messages recents</b>-->
+                <!--</div>-->
+                <!--<div class="ui segment">-->
+                    <!--<div class="ui relaxed divided list">-->
+                        <!--<div class="item" *ngFor="let msg of sent">-->
+                            <!--<i class="large mail middle aligned icon"></i>-->
+                            <!--<div class="content">-->
+                                <!--<a class="header">{{msg.sender}}</a>-->
+                                <!--<div class="description">10 min</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <table class="top attached ui basic table">
+                <thead>
+                <tr>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="attached ui table">
+                <tbody>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="attached ui celled selectable table">
+                <tbody>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="bottom attached ui celled table">
+                <thead>
+                <tr>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

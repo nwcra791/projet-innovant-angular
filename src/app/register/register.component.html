@@ -18,15 +18,15 @@
           <div class="ui left icon input">
             <i class="lock icon"></i>
             <input [(ngModel)]="passwd" type="password" name="password" placeholder="Password">
+            <div class="ui right pointing red basic label">
+              Your password must be 6 characters or more and contain at least 2 digits
+            </div>
           </div>
         </div>
         <div (click)="onClickRegister()" class="ui fluid large teal submit button">S'inscrire</div>
       </div>
-
       <div class="ui error message"></div>
-
     </form>
-
     <div class="ui message">
       Deja un compte ? <a routerLink="/enter/l">Se connecter</a>
     </div>
