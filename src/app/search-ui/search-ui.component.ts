@@ -23,7 +23,7 @@ export class SearchUiComponent implements OnInit {
           container: '#search-box',
           autofocus: false,
           placeholder: 'recherchez une anonce',
-          poweredBy: true
+          poweredBy: false
         })
     );
 
@@ -35,11 +35,13 @@ export class SearchUiComponent implements OnInit {
             empty: 'Aucuns résultats ne correspond à votre recherche',
             item: `<div class="ui items">
             <div class="item" style="margin-bottom: 15px">
-              <div class="ui small image">
-                    <img src={{img_url}} style="width: 500px">
-              </div>
+              <a href="/manager/traveller/offer/{{uuid}}">
+                  <div class="ui small image">
+                        <img src={{img_url}} style="width: 500px">
+                  </div>
+              </a>
               <div class="content">
-                <div class="header">{{{_highlightResult.name.value}}}</div>
+                <a href="/manager/traveller/offer/{{uuid}}"><div class="header">{{{_highlightResult.title.value}}}</div></a>
                 <div class="meta">
                   <span class="price"><strong>Domaine :</strong> {{domaine}} <strong style="margin-left: 4%"> Capacité d'accueil :</strong> {{nb_seat}}
                   <strong style="margin-left: 4%"> Lieu :</strong> {{city}}</span>
@@ -47,7 +49,7 @@ export class SearchUiComponent implements OnInit {
                 </div>
                 <div class="description">
                   <p>
-                  <strong>Desciption : </strong>Ici une description de l'annonce merveilleusement bien rédiger par l'utilisateur :) 500 charactère max je pense...
+                  <strong>Desciption : </strong>{{content}}
                   </p>
                 </div>
               </div>

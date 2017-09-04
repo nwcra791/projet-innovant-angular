@@ -28,14 +28,14 @@ export class UploadService {
         () => {
           // upload success
           //console.log(sessionStorage.getItem("user").toString());
-          if (model.current <=  3 && model.path == "/img_offer") {
+          if (model.current <= 3 && model.path == "/img_offer") {
               var image = document.getElementById("img" + model.current) as HTMLImageElement;
               image.setAttribute("src", uploadTask.snapshot.downloadURL);
               model.current++;
-              if (model.current <=  2) {
+
                 image = document.getElementById("img" + model.current) as HTMLImageElement;
                 image.classList.remove("hidden");
-              }
+
           }
           upload.url = uploadTask.snapshot.downloadURL;
           upload.name = upload.file.name;

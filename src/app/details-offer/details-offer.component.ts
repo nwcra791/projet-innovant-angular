@@ -16,7 +16,7 @@ export class DetailsOfferComponent implements OnInit {
 
     id_offer: number;
     public offer_Object;
-
+    public mail_Host;
 
     constructor(http: HttpService, logging: LoggingService, route: ActivatedRoute) {
         this.http = http;
@@ -38,7 +38,7 @@ export class DetailsOfferComponent implements OnInit {
     }
 
     onclickMiniImg(num) {
-        console.log(sessionStorage.getItem("user"));
+        console.log(this.logging.getMail());
         var mini_image = document.getElementById("mini" + num) as HTMLImageElement;
         mini_image.classList.remove("disabled");
         var mainImg = document.getElementById("mainImg") as HTMLImageElement;

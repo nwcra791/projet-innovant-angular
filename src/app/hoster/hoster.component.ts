@@ -32,8 +32,8 @@ export class HosterComponent implements OnInit {
         this.img_url = image.src;
         image = document.getElementById("img2") as HTMLImageElement;
         this.img_url2 = image.src;
-        image = document.getElementById("img2") as HTMLImageElement;
-        this.img_url2 = image.src;
+        image = document.getElementById("img3") as HTMLImageElement;
+        this.img_url3 = image.src;
     }
 
     onClickAddOffer() {
@@ -41,8 +41,8 @@ export class HosterComponent implements OnInit {
         //console.info(this.userName);
         console.info(this.details);
         console.info(this.adress);
-        console.info(this.zipcode);
-        console.info(this.domaine);
+        //console.info(this.zipcode);
+        //console.info(this.domaine);
         this.setImgUrl();
 
         let headers = new Headers({

@@ -9,11 +9,10 @@
     <br>
     <br>
     <div class="ui small nine wide images">
-        <img id="mini1" src="{{mini_img1}}" class="ui rounded fluid image three wide" src="{{offer_Object.img_url}}" (click)="onclickMiniImg(1)">
+        <img id="mini1" class="ui rounded fluid image three wide" src="{{offer_Object.img_url}}" (click)="onclickMiniImg(1)">
         <img id="mini2" class="ui rounded fluid image three wide disabled" src="{{offer_Object.img_url2}}" (click)="onclickMiniImg(2)">
         <img id="mini3" class="ui rounded fluid image three wide disabled" src="{{offer_Object.img_url3}}" (click)="onclickMiniImg(3)">
     </div>
-
     <table class="ui table">
         <thead>
         <tr>
@@ -45,8 +44,8 @@
         </tbody>
         <tfoot>
         <tr>
-            <th>footer</th>
-            <th>footer</th>
+            <th>Contact hebergeur</th>
+            <th>{{offer_Object.author}}</th>
         </tr>
         </tfoot>
     </table>
@@ -54,4 +53,5 @@
     <div class="ui text">
         {{offer_Object.content}}
     </div>
+
 </div>
