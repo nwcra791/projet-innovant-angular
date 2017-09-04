@@ -17,6 +17,7 @@ export class DetailsOfferComponent implements OnInit {
     id_offer: number;
     public offer_Object;
 
+
     constructor(http: HttpService, logging: LoggingService, route: ActivatedRoute) {
         this.http = http;
         this.logging = logging;
@@ -36,4 +37,19 @@ export class DetailsOfferComponent implements OnInit {
         });
     }
 
+    onclickMiniImg(num) {
+        console.log(sessionStorage.getItem("user"));
+        var mini_image = document.getElementById("mini" + num) as HTMLImageElement;
+        mini_image.classList.remove("disabled");
+        var mainImg = document.getElementById("mainImg") as HTMLImageElement;
+        mainImg.src = mini_image.src;
+        var someArray = [1, 2, 3];
+        for (var item in someArray) {
+            console.log(item);
+            if (item != num){
+                mini_image = document.getElementById("mini" + item) as HTMLImageElement;
+                mini_image.classList.remove("disabled");
+            }
+        }
+    }
 }
