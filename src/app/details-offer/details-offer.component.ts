@@ -38,7 +38,7 @@ export class DetailsOfferComponent implements OnInit {
     }
 
     onclickMiniImg(num) {
-        console.log(sessionStorage.getItem("user"));
+        console.dir(sessionStorage.getItem("user"));
         var mini_image = document.getElementById("mini" + num) as HTMLImageElement;
         mini_image.classList.remove("disabled");
         var mainImg = document.getElementById("mainImg") as HTMLImageElement;
